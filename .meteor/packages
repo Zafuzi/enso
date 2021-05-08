@@ -19,3 +19,5 @@ shell-server@0.5.0            # Server-side component of the `meteor shell` comm
 jquery
 spacebars
 blaze-html-templates
+less
+check
