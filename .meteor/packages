@@ -21,3 +21,6 @@ spacebars
 blaze-html-templates
 less
 check
+accounts-password
+reactive-dict
+accounts-base
