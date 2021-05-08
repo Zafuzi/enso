@@ -3,5 +3,12 @@
 </head>
 
 <body>
-	<h1> Meteor Micro Server </h1>
+	{{> header }}
 </body>
+
+<template name="header">
+	<header>
+		<h1> Meteor Micro Server </h1>
+		{{ date }}
+	</header>
+</template>
