@@ -1,39 +1,73 @@
 <head>
 	<title> Meteor Micro Server </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
-	{{> header }}
-</body>
 
 <template name="header">
 	<header>
-		<h1> Meteor Micro Server </h1>
-		{{ date }}
+		<nav>
+			<h1> <a href="/">Meteor Micro Server</a> </h1>
+			{{#if logged}}
+				<div>
+					{{email}}
+					<a href="/logout">Logout</a>	
+				</div>
+			{{else}}
+				<a href="/login">Login</a>
+			{{/if}}
+		</nav>
 	</header>
+</template>
+
+<template name="appLayout">
+	{{> header}}
 	<main>
-		{{#if logged}}
-			<h1> Welcome Back {{user.username}} </h1>
-			{{> logout}}
-		{{else}}
-			{{> login}}
-		{{/if}}
+		{{> Template.dynamic template=page }}
 	</main>
 </template>
 
 <template name="login">
-	<form id="login_form">
-		{{#if error}}
-			{{error}}
-			<br/>
-		{{/if}}
-		<input type="username" name="username" value="{{username}}" placeholder="username" min="3" max="45" required/>
-		<input type="password" name="password" value="{{password}}" placeholder="password" min="8" max="100" required/>
-		<button name="login"> Login </button>
-		<button name="register"> Register </button>
-	</form>
+	<section>
+		<form class="vertical shrink" id="login_form">
+			<h3> Login </h3>
+			{{> err error}}
+			<input type="email" name="email" placeholder="email" min="3" max="45" required/>
+			<input type="password" name="password" placeholder="password" min="8" max="100" required/>
+			<button> <b>Login</b> </button>
+			<p> Don't have an account? <a href="/register"> Register </a> </p>
+		</form>
+	</section>
 </template>
 
-<template name="logout">
-	<button>Logout</button>
+<template name="register">
+	<section>
+		<form class="vertical shrink" id="register_form">
+			<h3> Register </h3>
+			{{> err error}}
+			<input type="email" name="email" placeholder="email@domain.com" min="5" max="100" required/>
+			<input type="username" name="username" placeholder="username" min="3" max="45" required/>
+			<input type="password" name="password" placeholder="password" min="8" max="100" required/>
+			<button> <b>Create Account</b> </button>
+		</form>
+	</section>
+</template>
+
+<template name="home">
+	<section>
+		<h2> Welcome to Meteor Micro Server </h2>
+	</section>
+	<section>
+		<h3>Today: {{date}}</h3>
+		<figure>
+			<img src="https://picsum.photos/1920/1080">
+			<figcaption> This picture is from https://picsum.photos/1920/1080 </figcaption>
+		</figure>
+	</section>
+</template>
+
+<template name="err">
+	{{#if error}} 
+		<span class="fail"> {{error}} </span>
+	{{/if}}
 </template>

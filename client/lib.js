@@ -26,10 +26,10 @@ Template.registerHelper('user', function() {
 	return getUser();
 });
 
-Template.registerHelper('logged', function() {
-	return isUserLogged();
+Template.registerHelper('email', function() {
+	return getUser()?.emails[0]?.address;
 });
 
-Template.registerHelper('logout', function() {
-	return "Meteor.logout();"
+Template.registerHelper('logged', function() {
+	return isUserLogged();
 });

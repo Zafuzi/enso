@@ -24,3 +24,5 @@ check
 accounts-password
 reactive-dict
 accounts-base
+kadira:flow-router
+kadira:blaze-layout
