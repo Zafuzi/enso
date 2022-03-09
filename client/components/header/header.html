@@ -1,0 +1,15 @@
+<template name="header">
+	<header>
+		<nav>
+			<h1> <a href="/">Meteor Micro Server</a> </h1>
+			{{#if isUserLoggedIn}}
+				<div>
+					{{email}}
+					<a href="/logout">Logout</a>
+				</div>
+			{{else}}
+				<a href="/login">Login</a>
+			{{/if}}
+		</nav>
+	</header>
+</template>

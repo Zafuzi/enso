@@ -1,4 +1,5 @@
-Meteor.methods({
+Meteor.methods(
+{
 	'user.register'( data ) {
 		Accounts.createUser({
 			email: data.email,
