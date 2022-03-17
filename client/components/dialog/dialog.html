@@ -1,0 +1,22 @@
+<template name="dialog">
+	<div>
+		<div class="dialogBackground"></div>
+		<div class="dialog" id="{{id}}" title="{{title}}">
+			<div class="dialogTitle flex flow-row align-center justify-space-between {{titleClass}}">
+				<span class="ui-dialog-title">{{title}}</span>
+				<button class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close closeDialog">
+					<span class="ui-button-icon ui-icon ui-icon-closethick"></span>
+				</button>
+			</div>
+			<div class="dialogContent">
+				{{> UI.contentBlock}}
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="alertDialog">
+	{{# dialog id="alertDialog" title=title titleClass=class}}
+		<p>{{message}}</p>
+	{{/dialog}}
+</template>

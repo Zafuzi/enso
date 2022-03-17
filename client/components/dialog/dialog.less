@@ -1,0 +1,87 @@
+@import "../../styles/variables";
+
+.dialog {
+	position: absolute;
+	z-index: 99;
+	background-color: #fff;
+	top: 100px;
+	left: 50%;
+
+	border: none;
+	border-radius: 2px;
+
+	transform: translate3d(-50%, 0, 0);
+
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+	min-width: 300px;
+
+	animation-name: fadeIn;
+	animation-fill-mode: forwards;
+	animation-duration: 0.3s;
+
+	&.fadeOut {
+		animation-name: fadeOut;
+	}
+
+	.dialogTitle {
+		width: 100%;
+		background-color: @positive;
+		color: #fff;
+		padding: 8px;
+
+		.ui-button {
+			padding: 8px;
+			width: auto;
+		}
+
+		&.alert-info { background-color: @deep-dark; }
+		&.alert-okay { background-color: @balanced; }
+		&.alert-warn { background-color: @energized; }
+		&.alert-fail { background-color: @assertive; }
+	}
+
+	.dialogContent {
+		padding: 24px;
+	}
+}
+
+.dialogBackground {
+	position: absolute;
+	z-index: 98;
+	background-color: rgba(10, 5, 8, 0.5);
+	top: 0;
+	left: 0;
+
+	width: 100vw;
+	height: 100vh;
+
+	display: block;
+
+	animation-name: fadeIn;
+	animation-fill-mode: forwards;
+	animation-duration: 0.3s;
+
+	&.fadeOut {
+		animation-name: fadeOut;
+	}
+}
+
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

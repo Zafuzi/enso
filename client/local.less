@@ -1,3 +1,5 @@
+@import "styles/variables";
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -8,12 +10,23 @@ body, html {
 	font-size: 14pt;
 	line-height: 1.4;
 	font-weight: normal;
+	min-height: 100vh;
+	width: 100vw;
+	padding: 0;
+	margin: 0;
+
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12pt;
 }
 
 header, main, footer {
 	max-width: 900px;
 	margin: 0 auto;
 	padding: 0.3em;
+}
+
+main {
+	min-height: ~"calc(100vh - 50px - 4.8em)";
 }
 
 nav {
@@ -59,29 +72,49 @@ section {
 	}
 }
 
-input, button {
-	border: 1px solid #ccc;
-	padding: 0.3em 0.8em;
-	border-radius: 3px;
-}
-
-form {
-	display: flex;
-	flex-flow: column;
-	max-width: 400px;
-	margin: 0 auto;
-
-	input {
-		margin: 0.3em 0;
-	}
-
-	button {
-		width: auto;
-		margin-left: auto;
-		margin-top: 1em;
+input {
+	&[type=text],
+	&[type=number],
+	&[type=checkbox],
+	&[type=password],
+	&[type=username],
+	&[type=email] {
+		padding: 5px;
+		border: 2px solid #aaa;
 	}
 }
+
+footer {
+	min-height: 50px;
+}
+
+.max-width-300 { max-width: 300px; }
+.max-width-400 { max-width: 400px; }
+.max-width-500 { max-width: 500px; }
+.max-width-600 { max-width: 600px; }
+.max-width-700 { max-width: 700px; }
+.max-width-800 { max-width: 800px; }
+.max-width-900 { max-width: 900px; }
+.max-width-1200 { max-width: 1200px; }
+
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.padding-top { padding-top: 8px; }
+.padding-right { padding-right: 8px; }
+.padding-left { padding-left: 8px; }
+.padding-bottom { padding-bottom: 8px; }
+.padding { padding: 8px; }
+
+.margin-top { margin-top: 8px; }
+.margin-right { margin-right: 8px; }
+.margin-left { margin-left: 8px; }
+.margin-bottom { margin-bottom: 8px; }
+.margin { margin: 8px; }
 
 .okay { color: green; }
 .warn { color: orange; }
 .fail { color: red; }
+
+.hid { display: none !important; }

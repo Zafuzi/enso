@@ -1,6 +1,6 @@
 Meteor.methods(
 {
-	'user.register'( data ) {
+	'registerUser'( data ) {
 		Accounts.createUser({
 			email: data.email,
 			username: data.username,
