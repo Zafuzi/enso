@@ -1,0 +1,28 @@
+@import "../../styles/variables";
+
+.appLogo {
+	img {
+		height: 100%;
+		object-fit: contain;
+		margin-right: 8px;
+		max-height: 48px;
+	}
+
+	text-decoration: none;
+	text-transform: uppercase;
+
+	color: @dark-text;
+}
+
+.menuNavLinks {
+	a {
+		text-align: right;
+		margin-left: 8px;
+		color: @dark-text;
+		text-decoration: none;
+
+		&.active {
+			border-bottom: 2px solid @dark-text;
+		}
+	}
+}

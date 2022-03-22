@@ -1,29 +1,13 @@
 import {version} from "../lib/version";
 
-export const getUser = function()
+export const currentUser = function()
 {
 	return Meteor.user();
 }
 
 export const isUserLoggedIn = function()
 {
-	return !!getUser();
-}
-
-export const okay = function(r) { console.log( r ); return; }
-export const fail = function( err ) { console.error( err ); return; }
-
-export function rpc( cmd, data, okay, fail ) {
-	Meteor.call( cmd, data, function( err, r ) {
-		if( err ) {
-			fail( err );
-			return;
-		}
-
-		if( ! r ) return;
-
-		okay( r );
-	});
+	return !!currentUser();
 }
 
 // global helpers
@@ -32,21 +16,35 @@ Template.registerHelper('today', function()
 	return new Date();
 });
 
-Template.registerHelper('user', function()
+Template.registerHelper('userId', function(user)
 {
-	return getUser();
+	user = user || currentUser();
+	return user?._id;
 });
 
-Template.registerHelper('email', function()
+Template.registerHelper('userEmail', function(user)
 {
-	return getUser()?.emails[0]?.address;
+	user = user || currentUser();
+	return user?.emails[0]?.address;
 });
 
-Template.registerHelper('isUserLoggedIn', function() {
-	return isUserLoggedIn();
+Template.registerHelper('username', function(user)
+{
+	user = user || currentUser();
+	return user?.username;
 });
+
+Template.registerHelper('userLabel', function(user)
+{
+	user = user || currentUser();
+	return user?.username || user?.emails[0]?.address || user?._id;
+});
+
+Template.registerHelper('isUserLoggedIn', isUserLoggedIn);
 
 Template.registerHelper("version", function()
 {
 	return version;
 })
+
+Template.registerHelper("currentUser", currentUser);
