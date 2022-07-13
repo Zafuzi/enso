@@ -1,0 +1,25 @@
+<template name="layout">
+	<head>
+		<title> Meteor Micro Server </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<header class="container-1100 container-centered appHeader">
+        <span class="appHeader__title gap-8">
+            <a href={{pathFor "home"}}>
+                <h1>Meteor Micro Server</h1>
+            </a>
+        </span>
+        <nav>
+            <a href={{pathFor "about"}} class="{{active__ifRouteActive 'about'}}">About</a>
+        </nav>
+	</header>
+
+	<main>
+		{{> yield}}
+	</main>
+
+	<footer></footer>
+	
+	{{> alerts}}
+</template>

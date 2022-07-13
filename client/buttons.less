@@ -1,0 +1,59 @@
+@import "variables.less";
+@import "fonts.less";
+
+.button {
+	
+	font-size: 12pt;
+	
+	color: @dark;
+	background-color: @neutral-lighter;
+
+	border: none;
+	border-radius: 5px;
+
+	font-weight: 600;
+	text-decoration: none;
+	
+	min-width: 48px;
+	min-height: 48px;
+	
+	cursor: pointer;
+	
+	&:hover {
+		opacity: 0.8;
+	}
+
+	&-positive-light { background-color: @positive-lighter; color: @darker; }
+	&-positive-lighter { background-color: @positive-light; color: @darker; }
+	&-positive { background-color: @positive; color: @light; }
+	&-positive-dark { background-color: @positive-dark; color: @light; }
+	&-positive-darker { background-color: @balanced-darker; color: @light; }
+
+	&-balanced-light { background-color: @balanced-lighter; color: @darker; }
+	&-balanced-lighter { background-color: @balanced-light; color: @darker; }
+	&-balanced { background-color: @balanced; color: @light; }
+	&-balanced-dark { background-color: @balanced-dark; color: @light; }
+	&-balanced-darker { background-color: @balanced-darker; color: @light; }
+	
+	&-assertive-light { background-color: @assertive-lighter; color: @darker; }
+	&-assertive-lighter { background-color: @assertive-light; color: @darker; }
+	&-assertive { background-color: @assertive; color: @light; }
+	&-assertive-dark { background-color: @assertive-dark; color: @light; }
+	&-assertive-darker { background-color: @assertive-darker; color: @light; }
+	
+	&-energized-light { background-color: @energized-lighter; color: @darker; }
+	&-energized-lighter { background-color: @energized-light; color: @darker; }
+	&-energized { background-color: @energized; color: @darker; }
+	&-energized-dark { background-color: @energized-dark; color: @lighter; }
+	&-energized-darker { background-color: @energized-darker; color: @lighter; }
+	
+	&-juicy-light { background-color: @juicy-lighter; color: @darker; }
+	&-juicy-lighter { background-color: @juicy-light; color: @darker; }
+	&-juicy { background-color: @juicy; color: @light; }
+	&-juicy-dark { background-color: @juicy-dark; color: @light; }
+	&-juicy-darker { background-color: @juicy-darker; color: @light; }
+	
+	&-padded {
+		padding: 8px 16px;
+	}
+}

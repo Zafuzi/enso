@@ -1,0 +1,66 @@
+@import "../variables.less";
+@import "../general.less";
+@import "../buttons.less";
+@import "../fonts.less";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    width: 100vw;
+    overflow-x: hidden;
+
+    font-family: "Raleway", sans-serif;
+    font-size: 12pt;
+	font-weight: 400;
+
+    line-height: 1.2;
+
+    background-color: @lighter;
+    color: @darker;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	font-family: "Nunito", serif;
+	font-weight: 600;
+}
+
+.appHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 24px;
+
+    font-weight: 700;
+
+    .linedNumbers;
+
+    &__title {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+
+        h1 {
+            font-size: 22pt;
+			color: @darker;
+        }
+    }
+
+    nav {
+        a {
+            &.active {
+                border-bottom: 2px solid @positive;
+            }
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: @positive;
+    font-weight: 500;
+}

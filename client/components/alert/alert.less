@@ -1,0 +1,88 @@
+@import "../../variables";
+
+.alerts {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate3d(-50%, 0, 0);
+	
+	width: 90%;
+	
+	z-index: @alert-index;
+	
+	display: flex;
+	flex-flow: column;
+	
+	gap: 8px;
+	margin-top: 8px;
+	
+	.alert {
+		width: ~"calc(100% - 48px)";
+		height: 64px;
+		
+		font-size: 14pt;
+		font-weight: 600;
+		
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		
+		background-color: @neutral-dark;
+		color: @light;
+
+		box-shadow: 2px 4px 2px hsla(0, 0%, 0%, 3%);
+		border-radius: 5px;
+		
+		padding: 0 22px;
+		
+		.icon {
+			font-size: 28pt;
+			margin-right: 12px;
+		}
+		
+		&.success { background-color: @balanced; color: @lighter; }
+		&.error { background-color: @assertive; color: @lighter; }
+		&.warning { background-color: @energized; color: @positive-darker; }
+		&.information { background-color: @positive-dark; color: @lighter; }
+		
+		animation-name: popIn;
+		animation-duration: 0.2s;
+		animation-fill-mode: forwards;
+		
+		transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, top 0.2s ease-in-out;
+		
+		opacity: 1;
+		transform: scale(0);
+		
+		&.fadeOut {
+			animation-name: fadeOut;
+		}
+		
+		&__closeButton {
+			margin-left: auto;
+			cursor: pointer;
+		}
+		
+		overflow: hidden;
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(0);
+		opacity: 0;
+	}
+}
+
+@keyframes popIn {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}

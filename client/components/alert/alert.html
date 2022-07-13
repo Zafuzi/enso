@@ -1,0 +1,27 @@
+<template name="alerts">
+	<div class="container container-900 container-centered alerts"></div>
+</template>
+
+<template name="alert">
+	<alert class="alert {{type}}">
+		{{#if (isAlertType "success")}}
+			<i class="icon ion-android-checkmark-circle"></i>
+		{{/if}}
+		
+		{{#if (isAlertType "error")}}
+			<i class="icon ion-nuclear"></i>
+		{{/if}}
+		
+		{{#if (isAlertType "warning")}}
+			<i class="icon ion-android-warning"></i>
+		{{/if}}
+		
+		{{#if (isAlertType "information")}}
+			<i class="icon ion-ios-information-outline"></i>
+		{{/if}}
+		<span>{{content}}</span>
+		<span class="alert__closeButton">
+			<i class="icon ion-android-close"></i>
+		</span>
+	</alert>
+</template>
