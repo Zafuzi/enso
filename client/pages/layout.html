@@ -10,15 +10,15 @@
                 <h1>Enso</h1>
             </a>
         </span>
-        <nav>
-            <a href={{pathFor "about"}} class="{{active__ifRouteActive 'about'}}">About</a>
-            <button class="button button-padded button-neutral-dark appHeader__switchTheme">
-				{{#if isDarkTheme}}
-					Switch To Light Theme
-				{{else}}
-					Switch To Dark Theme
-				{{/if}}
-			</button>
+        <nav class="gap-24 appHeader__nav">
+			<div class="flex gap-16">
+				<a href={{pathFor "home"}} class="{{active__ifRouteActive 'home'}}">Home</a>
+				<a href={{pathFor "about"}} class="{{active__ifRouteActive 'about'}}">About</a>
+			</div>
+            <label>
+				<input class="appHeader__switchTheme" type="checkbox" checked="{{#if isDarkTheme}}checked{{/if}}">
+				Enable Dark Theme
+			</label>
         </nav>
 	</header>
 

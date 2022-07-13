@@ -6,34 +6,42 @@ Meteor.call("ping", function(error, result)
 });
 
 const html = document.querySelector('html');
-html.dataset.theme = `theme-light`;
+html.dataset.theme = `light`;
 
 function switchTheme(theme) {
 	if(theme)
 	{
-		html.dataset.theme = `theme-${theme}`;
+		html.dataset.theme = `${theme}`;
+		Session.set("theme", theme);
+		Session.save("theme");
 		return;
 	}
 	
-	if(html.dataset.theme === "theme-light")
+	if(html.dataset.theme === "light")
 	{
-		html.dataset.theme = `theme-dark`;
+		html.dataset.theme = `dark`;
+		Session.set("theme", "dark");
+		Session.save("theme");
 		return;
 	}
-	
-	html.dataset.theme = `theme-light`;
+
+	html.dataset.theme = `light`;
+	Session.set("theme", "light");
+	Session.save("theme");
 }
 
 Template.layout.onCreated(function()
 {
-	this.theme = new ReactiveVar(html.dataset.theme);	
+	Session.load("theme");
+	this.theme = Session.get("theme");
+	switchTheme(this.theme);
 });
 
 Template.layout.helpers(
 {
 	isDarkTheme: function()
 	{
-		return Template.instance().theme.get() === "theme-dark";
+		return Session.get("theme") === "dark"; 
 	}
 });
 
@@ -42,6 +50,5 @@ Template.layout.events(
 	"click .appHeader__switchTheme": function(event, instance)
 	{
 		switchTheme();
-		instance.theme.set(html.dataset.theme);
 	}
 });
