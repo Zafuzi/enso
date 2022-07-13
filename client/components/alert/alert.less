@@ -1,5 +1,15 @@
 @import "../../variables";
 
+:root {
+	--alert-light-text: @lighter;
+	--alert-dark-text: @darker;
+}
+
+[data-theme="theme-dark"] {
+	--alert-light-text: @darker;
+	--alert-dark-text: @lighter;
+}
+
 .alerts {
 	position: absolute;
 	top: 0;
@@ -40,13 +50,7 @@
 			margin-right: 12px;
 		}
 
-		--alert-light-text: @lighter;
-		--alert-dark-text: @darker;
 
-		@media (prefers-color-scheme: dark) {
-			--alert-light-text: @darker;
-			--alert-dark-text: @lighter;
-		}
 		
 		&.success { background-color: @balanced; color: var(--alert-light-text); }
 		&.error { background-color: @assertive; color: var(--alert-light-text); }

@@ -12,6 +12,13 @@
         </span>
         <nav>
             <a href={{pathFor "about"}} class="{{active__ifRouteActive 'about'}}">About</a>
+            <button class="button button-padded button-neutral-dark appHeader__switchTheme">
+				{{#if isDarkTheme}}
+					Switch To Light Theme
+				{{else}}
+					Switch To Dark Theme
+				{{/if}}
+			</button>
         </nav>
 	</header>
 

@@ -1,6 +1,16 @@
 @import "variables.less";
 @import "fonts.less";
 
+:root {
+	--button-light-text: @lighter;
+	--button-dark-text: @darker;
+}
+
+[data-theme="theme-dark"] {
+	--button-light-text: @darker;
+	--button-dark-text: @lighter;
+}
+
 .button {
 	
 	font-size: 12pt;
@@ -23,13 +33,7 @@
 		opacity: 0.8;
 	}
 	
-	--button-light-text: @lighter;
-	--button-dark-text: @darker;
-	
-	@media (prefers-color-scheme: dark) {
-		--button-light-text: @darker;
-		--button-dark-text: @lighter;
-	}
+
 
 	&-positive-lighter { background-color: @positive-lighter; color: var(--button-dark-text); }
 	&-positive-light { background-color: @positive-light; color: var(--button-dark-text); }
