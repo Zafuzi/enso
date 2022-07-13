@@ -42,6 +42,10 @@ Template.alert.onCreated(function()
 
 	this.removeSelf = function()
 	{
+		if(!instance.firstNode)
+		{
+			return;
+		}
 		aliveAlerts.set(aliveAlerts.get() - 1);
 		instance.firstNode.classList.add("fadeOut");
 		Meteor.setTimeout(function()

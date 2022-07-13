@@ -22,36 +22,50 @@
 	&:hover {
 		opacity: 0.8;
 	}
+	
+	--button-light-text: @lighter;
+	--button-dark-text: @darker;
+	
+	@media (prefers-color-scheme: dark) {
+		--button-light-text: @darker;
+		--button-dark-text: @lighter;
+	}
 
-	&-positive-light { background-color: @positive-lighter; color: @darker; }
-	&-positive-lighter { background-color: @positive-light; color: @darker; }
-	&-positive { background-color: @positive; color: @light; }
-	&-positive-dark { background-color: @positive-dark; color: @light; }
-	&-positive-darker { background-color: @balanced-darker; color: @light; }
+	&-positive-lighter { background-color: @positive-lighter; color: var(--button-dark-text); }
+	&-positive-light { background-color: @positive-light; color: var(--button-dark-text); }
+	&-positive { background-color: @positive; color: var(--button-light-text); }
+	&-positive-dark { background-color: @positive-dark; color: var(--button-light-text); }
+	&-positive-darker { background-color: @positive-darker; color: var(--button-light-text); }
 
-	&-balanced-light { background-color: @balanced-lighter; color: @darker; }
-	&-balanced-lighter { background-color: @balanced-light; color: @darker; }
-	&-balanced { background-color: @balanced; color: @light; }
-	&-balanced-dark { background-color: @balanced-dark; color: @light; }
-	&-balanced-darker { background-color: @balanced-darker; color: @light; }
+	&-balanced-lighter { background-color: @balanced-lighter; color: var(--button-dark-text); }
+	&-balanced-light { background-color: @balanced-light; color: var(--button-dark-text); }
+	&-balanced { background-color: @balanced; color: var(--button-light-text); }
+	&-balanced-dark { background-color: @balanced-dark; color: var(--button-light-text); }
+	&-balanced-darker { background-color: @balanced-darker; color: var(--button-light-text); }
+
+	&-assertive-lighter { background-color: @assertive-lighter; color: var(--button-dark-text); }
+	&-assertive-light { background-color: @assertive-light; color: var(--button-dark-text); }
+	&-assertive { background-color: @assertive; color: var(--button-light-text); }
+	&-assertive-dark { background-color: @assertive-dark; color: var(--button-light-text); }
+	&-assertive-darker { background-color: @assertive-darker; color: var(--button-light-text); }
 	
-	&-assertive-light { background-color: @assertive-lighter; color: @darker; }
-	&-assertive-lighter { background-color: @assertive-light; color: @darker; }
-	&-assertive { background-color: @assertive; color: @light; }
-	&-assertive-dark { background-color: @assertive-dark; color: @light; }
-	&-assertive-darker { background-color: @assertive-darker; color: @light; }
+	&-energized-lighter { background-color: @energized-lighter; color: var(--button-dark-text); }
+	&-energized-light { background-color: @energized-light; color: var(--button-dark-text); }
+	&-energized { background-color: @energized; color: var(--button-dark-text); }
+	&-energized-dark { background-color: @energized-dark; color: var(--button-light-text); }
+	&-energized-darker { background-color: @energized-darker; color: var(--button-light-text); }
 	
-	&-energized-light { background-color: @energized-lighter; color: @darker; }
-	&-energized-lighter { background-color: @energized-light; color: @darker; }
-	&-energized { background-color: @energized; color: @darker; }
-	&-energized-dark { background-color: @energized-dark; color: @lighter; }
-	&-energized-darker { background-color: @energized-darker; color: @lighter; }
+	&-juicy-lighter { background-color: @juicy-lighter; color: var(--button-dark-text); }
+	&-juicy-light { background-color: @juicy-light; color: var(--button-dark-text); }
+	&-juicy { background-color: @juicy; color: var(--button-light-text); }
+	&-juicy-dark { background-color: @juicy-dark; color: var(--button-light-text); }
+	&-juicy-darker { background-color: @juicy-darker; color: var(--button-light-text); }
 	
-	&-juicy-light { background-color: @juicy-lighter; color: @darker; }
-	&-juicy-lighter { background-color: @juicy-light; color: @darker; }
-	&-juicy { background-color: @juicy; color: @light; }
-	&-juicy-dark { background-color: @juicy-dark; color: @light; }
-	&-juicy-darker { background-color: @juicy-darker; color: @light; }
+	&-neutral-lighter { background-color: @neutral-lighter; color: var(--button-dark-text); }
+	&-neutral-light { background-color: @neutral-light; color: var(--button-dark-text); }
+	&-neutral { background-color: @neutral; color: var(--button-light-text); }
+	&-neutral-dark { background-color: @neutral-dark; color: var(--button-light-text); }
+	&-neutral-darker { background-color: @neutral-darker; color: var(--button-light-text); }
 	
 	&-padded {
 		padding: 8px 16px;

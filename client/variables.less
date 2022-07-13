@@ -1,43 +1,101 @@
-@lighter: hsl(0, 0%, 100%);
-@light: hsl(0, 0%, 88%);
-@dark: hsl(0, 0%, 12%);
-@darker: hsl(0, 0%, 0%);
+:root {
+	--lighter: hsl(0, 0%, 98%);
+	--light: hsl(0, 0%, 88%);
+	--dark: hsl(0, 0%, 12%);
+	--darker: hsl(0, 0%, 6%);
 
-@positive-light: hsl(205, 100%, 88%);
-@positive-lighter: hsl(205, 100%, 66%);
-@positive: hsl(205, 100%, 44%);
-@positive-dark: hsl(205, 100%, 22%);
-@positive-darker: hsl(205, 100%, 12%);
+	--positive-lighter: hsl(205, 100%, 88%);
+	--positive-light: hsl(205, 100%, 66%);
+	--positive: hsl(205, 100%, 44%);
+	--positive-dark: hsl(205, 100%, 22%);
+	--positive-darker: hsl(205, 100%, 12%);
 
-@balanced-lighter: hsl(160, 100%, 88%);
-@balanced-light: hsl(160, 100%, 66%);
-@balanced: hsl(160, 100%, 22%);
-@balanced-dark: hsl(160, 100%, 12%);
-@balanced-darker: hsl(160, 100%, 6%);
+	--balanced-lighter: hsl(160, 100%, 88%);
+	--balanced-light: hsl(160, 100%, 66%);
+	--balanced: hsl(160, 100%, 22%);
+	--balanced-dark: hsl(160, 100%, 12%);
+	--balanced-darker: hsl(160, 100%, 6%);
 
-@energized-lighter: hsl(40, 100%, 88%);
-@energized-light: hsl(40, 100%, 66%);
-@energized: hsl(40, 100%, 44%);
-@energized-dark: hsl(40, 100%, 22%);
-@energized-darker: hsl(40, 100%, 12%);
+	--energized-lighter: hsl(40, 100%, 88%);
+	--energized-light: hsl(40, 100%, 66%);
+	--energized: hsl(40, 100%, 44%);
+	--energized-dark: hsl(40, 100%, 22%);
+	--energized-darker: hsl(40, 100%, 12%);
 
-@assertive-lighter: hsl(346, 100%, 88%);
-@assertive-light: hsl(346, 100%, 66%);
-@assertive: hsl(346, 100%, 44%);
-@assertive-dark: hsl(346, 100%, 22%);
-@assertive-darker: hsl(346, 100%, 12%);
+	--assertive-lighter: hsl(346, 100%, 88%);
+	--assertive-light: hsl(346, 100%, 66%);
+	--assertive: hsl(346, 100%, 44%);
+	--assertive-dark: hsl(346, 100%, 22%);
+	--assertive-darker: hsl(346, 100%, 12%);
 
-@juicy-lighter: hsl(323, 100%, 88%);
-@juicy-light: hsl(323, 100%, 66%);
-@juicy: hsl(323, 100%, 44%);
-@juicy-dark: hsl(323, 100%, 22%);
-@juicy-darker: hsl(323, 100%, 12%);
+	--juicy-lighter: hsl(323, 100%, 88%);
+	--juicy-light: hsl(323, 100%, 66%);
+	--juicy: hsl(323, 100%, 44%);
+	--juicy-dark: hsl(323, 100%, 22%);
+	--juicy-darker: hsl(323, 100%, 12%);
 
-@neutral-lighter: hsl(0, 0%, 88%);
-@neutral-light: hsl(0, 0%, 66%);
-@neutral: hsl(0, 0%, 44%);
-@neutral-dark: hsl(0, 0%, 22%);
-@neutral-darker: hsl(0, 0%, 12%);
+	--neutral-lighter: hsl(0, 0%, 88%);
+	--neutral-light: hsl(0, 0%, 66%);
+	--neutral: hsl(0, 0%, 44%);
+	--neutral-dark: hsl(0, 0%, 22%);
+	--neutral-darker: hsl(0, 0%, 12%);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--lighter: hsl(0, 0%, 6%);
+		--light: hsl(0, 0%, 12%);
+		--dark: hsl(0, 0%, 88%);
+		--darker: hsl(0, 0%, 98%); 
+	}
+}
+
+@lighter: var(--lighter);
+@light: var(--light);
+@dark: var(--dark);
+@darker: var(--darker);
+
+@positive-lighter: var(--positive-lighter);
+@positive-light: var(--positive-light);
+@positive: var(--positive);
+@positive-dark: var(--positive-dark);
+@positive-darker:  var(--positive-darker);
+
+@balanced-lighter: var(--balanced-lighter);
+@balanced-light: var(--balanced-light);
+@balanced: var(--balanced);
+@balanced-dark: var(--balanced-dark);
+@balanced-darker: var(--balanced-darker);
+
+@energized-lighter: var(--energized-lighter);
+@energized-light: var(--energized-light);
+@energized: var(--energized);
+@energized-dark: var(--energized-dark);
+@energized-darker: var(--energized-darker);
+
+@assertive-lighter: var(--assertive-lighter);
+@assertive-light: var(--assertive-light);
+@assertive: var(--assertive);
+@assertive-dark: var(--assertive-dark);
+@assertive-darker: var(--assertive-darker);
+
+@juicy-lighter: var(--juicy-lighter);
+@juicy-light: var(--juicy-light);
+@juicy: var(--juicy);
+@juicy-dark: var(--juicy-dark);
+@juicy-darker: var(--juicy-darker);
+
+@neutral-lighter: var(--neutral-lighter);
+@neutral-light: var(--neutral-light);
+@neutral: var(--neutral);
+@neutral-dark: var(--neutral-dark);
+@neutral-darker: var(--neutral-darker);
+
+@balanced-lighter: var(--balanced-lighter);
+@balanced-light: var(--balanced-light);
+@balanced: var(--balanced);
+@balanced-dark: var(--balanced-dark);
+@balanced-darker: var(--balanced-darker);
 
 // z-indexes
 @alert-index: 99;

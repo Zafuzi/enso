@@ -39,11 +39,19 @@
 			font-size: 28pt;
 			margin-right: 12px;
 		}
+
+		--alert-light-text: @lighter;
+		--alert-dark-text: @darker;
+
+		@media (prefers-color-scheme: dark) {
+			--alert-light-text: @darker;
+			--alert-dark-text: @lighter;
+		}
 		
-		&.success { background-color: @balanced; color: @lighter; }
-		&.error { background-color: @assertive; color: @lighter; }
-		&.warning { background-color: @energized; color: @positive-darker; }
-		&.information { background-color: @positive-dark; color: @lighter; }
+		&.success { background-color: @balanced; color: var(--alert-light-text); }
+		&.error { background-color: @assertive; color: var(--alert-light-text); }
+		&.warning { background-color: @energized; color: var(--alert-dark-text); }
+		&.information { background-color: @positive-dark; color: var(--alert-light-text); }
 		
 		animation-name: popIn;
 		animation-duration: 0.2s;
