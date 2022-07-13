@@ -1,14 +1,14 @@
 -------------------- --------------------
 
-           Meteor Micro Server
+                  ENSO 
 
 -------------------- --------------------
 
 - about -
-A simple server that uses meteor.js
+A simple server that uses meteor.js, I use this as a starter for my meteor projects
 
 - why - 
-Because I can, and I kind of like meteor when you take out all the fluff
+Because I can
 
 - how -
  - clone this repo

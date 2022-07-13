@@ -1,5 +1,5 @@
 {
-  "name": "meteor-micro-server",
+  "name": "enso",
   "private": true,
   "scripts": {
     "start": "meteor run"
