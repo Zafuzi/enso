@@ -1,52 +1,16 @@
 <template name="home">
 	<div class="container-1100 container-centered home">
 		<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nibh tortor, auctor non tellus at, faucibus viverra velit. Quisque gravida porttitor turpis, non dapibus turpis facilisis at. Phasellus mauris magna, pharetra ut lacinia ac, tristique at lorem. Ut placerat laoreet leo vitae feugiat. Sed imperdiet consequat tellus vel tincidunt. Donec malesuada at elit sit amet placerat. Nam sollicitudin pharetra posuere. Aliquam laoreet purus congue, semper nunc et, fermentum diam. Phasellus ut cursus lacus. Fusce blandit feugiat erat, non maximus odio hendrerit dignissim. Donec vestibulum sem a auctor pretium. </p>
-		<br>
 		<p>0123456789.0123456789/+-=$%</p>
-		<br>
 		
-		<button class="button button-padded button-assertive-lighter home__showError">Show Error Alert</button>
-		<button class="button button-padded button-assertive-light home__showError">Show Error Alert</button>
-		<button class="button button-padded button-assertive home__showError">Show Error Alert</button>
-		<button class="button button-padded button-assertive-dark home__showError">Show Error Alert</button>
-		<button class="button button-padded button-assertive-darker home__showError">Show Error Alert</button>
-		<br>
-		<br>
-		<button class="button button-padded button-positive-lighter home__showInformation">Show Information Alert</button>
-		<button class="button button-padded button-positive-light home__showInformation">Show Information Alert</button>
-		<button class="button button-padded button-positive home__showInformation">Show Information Alert</button>
-		<button class="button button-padded button-positive-dark home__showInformation">Show Information Alert</button>
-		<button class="button button-padded button-positive-darker home__showInformation">Show Information Alert</button>
-		<br>
-		<br>
-		<button class="button button-padded button-balanced-lighter home__showSuccess">Show Success Alert</button>
-		<button class="button button-padded button-balanced-light home__showSuccess">Show Success Alert</button>
-		<button class="button button-padded button-balanced home__showSuccess">Show Success Alert</button>
-		<button class="button button-padded button-balanced-dark home__showSuccess">Show Success Alert</button>
-		<button class="button button-padded button-balanced-darker home__showSuccess">Show Success Alert</button>
-		<br>
-		<br>
-		<button class="button button-padded button-energized-lighter home__showWarning">Show Warning Alert</button>
-		<button class="button button-padded button-energized-light home__showWarning">Show Warning Alert</button>
-		<button class="button button-padded button-energized home__showWarning">Show Warning Alert</button>
-		<button class="button button-padded button-energized-dark home__showWarning">Show Warning Alert</button>
-		<button class="button button-padded button-energized-darker home__showWarning">Show Warning Alert</button>
-		<br>
-		<br>
-		<button class="button button-padded button-juicy-lighter">Juicy Lighter</button>
-		<button class="button button-padded button-juicy-light">Juicy Light</button>
-		<button class="button button-padded button-juicy">Juicy</button>
-		<button class="button button-padded button-juicy-dark">Juicy Dark</button>
-		<button class="button button-padded button-juicy-darker">Juicy Darker</button>
-		<br>
-		<br>
-		<button class="button button-padded button-neutral-lighter">Neutral Lighter</button>
-		<button class="button button-padded button-neutral-light">Neutral Light</button>
-		<button class="button button-padded button-neutral">Neutral</button>
-		<button class="button button-padded button-neutral-dark">Neutral Dark</button>
-		<button class="button button-padded button-neutral-darker">Neutral Darker</button>
-		
-		<hr/>
+		<div class="flex flex-row-wrap gap-8">
+			<button class="button button-padded button-assertive home__showError">Show Error Alert</button>
+			<button class="button button-padded button-positive home__showInformation">Show Information Alert</button>
+			<button class="button button-padded button-balanced home__showSuccess">Show Success Alert</button>
+			<button class="button button-padded button-energized home__showWarning">Show Warning Alert</button>
+			<button class="button button-padded button-juicy">Juicy</button>
+			<button class="button button-padded button-neutral">Neutral</button>
+		</div>
 		
 		<h2>Modals</h2>
 		<button class="button button-padded button-positive home__openModalButton">Open an alert modal</button>
@@ -55,8 +19,7 @@
 
 <template name="alertModal">
 	<div class="alertModal">
-		<h3>ALERT!</h3>
-		<br>
-		<button class="button button-padded button-assertive home__closeModalButton">Close Modal</button>
+		<p>This modal is meant to inform the user of something, or perhaps it will contain an action for the user to perform.</p>
+		<p>Either way, this is a modal, it is useful.</p>
 	</div>
 </template>

@@ -1,4 +1,21 @@
-.flex {display: flex;}
+.flex {
+	display: flex;
+	&-row-wrap {
+		flex-flow: row wrap;
+	}
+	&-row-nowrap {
+		flex-flow: row nowrap;
+	}
+	&-row-reverse {
+		flex-direction: row-reverse;
+	}
+	&-column {
+		flex-flow: column;
+	}
+	&-column-reverse {
+		flex-direction: column-reverse;
+	}
+}
 .grid {display: grid;}
 
 /**
