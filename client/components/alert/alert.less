@@ -47,12 +47,23 @@
 		
 		padding: 0 22px;
 		
-		.icon {
-			font-size: 28pt;
+		& > .icon {
+			font-size: 24pt;
 			margin-right: 12px;
 		}
-
-
+		
+		&__closeButton {
+			font-size: 28pt;
+			position: absolute;
+			right: 8px;
+			top: 8px;
+			width: 48px;
+			height: 48px;
+			
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 		
 		&.success { background-color: @balanced; color: var(--alert-light-text); }
 		&.error { background-color: @assertive; color: var(--alert-light-text); }

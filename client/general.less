@@ -1,3 +1,5 @@
+@import "variables";
+
 .flex {
 	display: flex;
 	&-row-wrap {
@@ -18,6 +20,33 @@
 }
 .grid {display: grid;}
 
+.align {
+	&-center {
+		align-items: center;
+	}
+	&-start {
+		align-items: flex-start;
+	}
+	&-end {
+		align-items: flex-end;
+	}
+}
+
+.justify {
+	&-center {
+		justify-content: center;
+	}
+	&-start {
+		justify-content: flex-start;
+	}
+	&-end {
+		justify-content: flex-end;
+	}
+	&-space-between {
+		justify-content: space-between;
+	}
+}
+
 /**
 	For use with flexbox and grid layouts
 	Will apply a gap on the vertical and horizontal axis unless otherwise specified
@@ -37,4 +66,115 @@
 	&-900 { max-width: 900px; }
 	&-1100 { max-width: 1100px; }
 	&-centered { margin-left: auto; margin-right: auto; }
+	&-padded { padding: 8px; }
+}
+
+.padding {
+	&-4 { padding: 4px; }
+	&-8 { padding: 8px; }
+	&-12 { padding: 12px; }
+	&-16 { padding: 16px; }
+	&-24 { padding: 24px; }
+	&-32 { padding: 32px; }
+	&-64 { padding: 64px; }
+	
+	&-top { padding-top: 8px; }
+	&-bottom { padding-bottom: 8px; }
+	&-right { padding-right: 8px; }
+	&-left { padding-left: 8px; }
+}
+
+.font {
+	&-100 { font-weight: 100; }
+	&-200 { font-weight: 200; }
+	&-300 { font-weight: 300; }
+	&-400 { font-weight: 400; }
+	&-500 { font-weight: 500; }
+	&-600 { font-weight: 600; }
+	&-700 { font-weight: 700; }
+	&-800 { font-weight: 800; }
+	&-900 { font-weight: 900; }
+	&-italic { font-style: italic; }
+}
+
+.positive-lighter { color: @positive-lighter; }
+.positive-light { color: @positive-light; }
+.positive { color: @positive; }
+.positive-dark { color: @positive-dark; }
+.positive-darker { color: @positive-darker; }
+
+.balanced-lighter { color: @balanced-lighter; }
+.balanced-light { color: @balanced-light; }
+.balanced { color: @balanced; }
+.balanced-dark { color: @balanced-dark; }
+.balanced-darker { color: @balanced-darker; }
+
+.assertive-lighter { color: @assertive-lighter; }
+.assertive-light { color: @assertive-light; }
+.assertive { color: @assertive; }
+.assertive-dark { color: @assertive-dark; }
+.assertive-darker { color: @assertive-darker; }
+
+.energized-lighter { color: @energized-lighter; }
+.energized-light { color: @energized-light; }
+.energized { color: @energized; }
+.energized-dark { color: @energized-dark; }
+.energized-darker { color: @energized-darker; }
+
+.juicy-lighter { color: @juicy-lighter; }
+.juicy-light { color: @juicy-light; }
+.juicy { color: @juicy; }
+.juicy-dark { color: @juicy-dark; }
+.juicy-darker { color: @juicy-darker; }
+
+.lighter { color: @lighter; }
+.light { color: @light; }
+.dark { color: @dark; }
+.darker { color: @darker; }
+
+.bg-positive-lighter { background-color: @positive-lighter; }
+.bg-positive-light { background-color: @positive-light; }
+.bg-positive { background-color: @positive; }
+.bg-positive-dark { background-color: @positive-dark; }
+.bg-positive-darker { background-color: @positive-darker; }
+
+.bg-balanced-lighter { background-color: @balanced-lighter; }
+.bg-balanced-light { background-color: @balanced-light; }
+.bg-balanced { background-color: @balanced; }
+.bg-balanced-dark { background-color: @balanced-dark; }
+.bg-balanced-darker { background-color: @balanced-darker; }
+
+.bg-assertive-lighter { background-color: @assertive-lighter; }
+.bg-assertive-light { background-color: @assertive-light; }
+.bg-assertive { background-color: @assertive; }
+.bg-assertive-dark { background-color: @assertive-dark; }
+.bg-assertive-darker { background-color: @assertive-darker; }
+
+.bg-energized-lighter { background-color: @energized-lighter; }
+.bg-energized-light { background-color: @energized-light; }
+.bg-energized { background-color: @energized; }
+.bg-energized-dark { background-color: @energized-dark; }
+.bg-energized-darker { background-color: @energized-darker; }
+
+.bg-juicy-lighter { background-color: @juicy-lighter; }
+.bg-juicy-light { background-color: @juicy-light; }
+.bg-juicy { background-color: @juicy; }
+.bg-juicy-dark { background-color: @juicy-dark; }
+.bg-juicy-darker { background-color: @juicy-darker; }
+
+.bg-lighter { background-color: @lighter; }
+.bg-light { background-color: @light; }
+.bg-dark { background-color: @dark; }
+.bg-darker { background-color: @darker; }
+
+[data-theme="dark"] {
+	.lighter { color: @darker; }
+	.light { color: @dark; }
+	.dark { color: @light; }
+	.darker { color: @lighter; }
+
+	.bg-lighter { background-color: @darker; }
+	.bg-light { background-color: @dark }
+	.bg-dark { background-color: @light; }
+	.bg-darker { background-color: @lighter; }
 }
