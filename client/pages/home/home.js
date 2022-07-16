@@ -23,9 +23,9 @@ Template.home.events(
 	},
 	"click .home__openModalButton": function()
 	{
-		console.log("alert");	
 		openModal("alertModal", {
-			class: "container-900"
+			class: "container-700",
+			title: "Alert..."
 		});
 	},
 

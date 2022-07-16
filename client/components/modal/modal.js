@@ -8,11 +8,14 @@ Template.modal.onCreated(function()
 	// only one modal is allowed open at once
 	self.status = new ReactiveVar("closed");
 	self.template = new ReactiveVar(null);
+	self.footerTemplate = new ReactiveVar(null);
 	self.options = new ReactiveVar(null);
+	self.popOut = new ReactiveVar(null);
 	
 	self.openModal = function(templateName, options)
 	{
 		self.template.set(templateName);
+		self.footerTemplate.set(options?.footerTemplate);
 		self.options.set(options);
 		self.status.set("open");
 	}
@@ -21,10 +24,14 @@ Template.modal.onCreated(function()
 	
 	self.closeModal = function()
 	{
-		console.log("called me");
-		self.status.set("closed");
-		self.template.set(null);
-		self.options.set(null);
+		self.popOut.set(true);
+		Meteor.setTimeout(function()
+		{
+			self.status.set("closed");
+			self.template.set(null);
+			self.options.set(null);
+			self.popOut.set(null);
+		}, 300);
 	}
 	
 	closeModal = self.closeModal;
@@ -34,15 +41,35 @@ Template.modal.helpers(
 {
 	isModalOpen: function()
 	{
-		return Template.instance().status.get() === "open";
+		let isOpen = Template.instance().status.get() === "open";
+		if(isOpen)
+		{
+			document.body.style.overflowY = "hidden";
+			document.documentElement.style.overflowY = "hidden";
+		}
+		else 
+		{
+			document.body.removeAttribute("style");
+			document.documentElement.removeAttribute("style");
+		}
+		
+		return isOpen;
 	},
 	template: function()
 	{
 		return Template.instance().template.get();
 	},
+	footerTemplate: function()
+	{
+		return Template.instance().footerTemplate.get();
+	},
 	options: function()
 	{
 		return Template.instance().options.get();
+	},
+	popOut: function()
+	{
+		return Template.instance().popOut.get() ? "popOut" : "";
 	}
 });
 
