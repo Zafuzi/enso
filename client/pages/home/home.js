@@ -1,4 +1,5 @@
 import {showAlert} from "../../components/alert/alert";
+import {closeModal, openModal} from "../../components/modal/modal";
 
 Template.home.events(
 {
@@ -20,4 +21,20 @@ Template.home.events(
 	{
 		showAlert("information", "Just so you know, it's fyi...");
 	},
+	"click .home__openModalButton": function()
+	{
+		console.log("alert");	
+		openModal("alertModal", {
+			class: "container-900"
+		});
+	},
+
+});
+
+Template.alertModal.events(
+{
+	"click .home__closeModalButton": function()
+	{
+		closeModal();
+	}
 });
