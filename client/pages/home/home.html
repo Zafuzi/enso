@@ -1,21 +1,22 @@
 <template name="home">
-	<div class="container-1100 container-centered home">
-		<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nibh tortor, auctor non tellus at, faucibus viverra velit. Quisque gravida porttitor turpis, non dapibus turpis facilisis at. Phasellus mauris magna, pharetra ut lacinia ac, tristique at lorem. Ut placerat laoreet leo vitae feugiat. Sed imperdiet consequat tellus vel tincidunt. Donec malesuada at elit sit amet placerat. Nam sollicitudin pharetra posuere. Aliquam laoreet purus congue, semper nunc et, fermentum diam. Phasellus ut cursus lacus. Fusce blandit feugiat erat, non maximus odio hendrerit dignissim. Donec vestibulum sem a auctor pretium. </p>
-		<p>0123456789.0123456789/+-=$%</p>
-		
-		<div class="flex flex-row-wrap gap-8">
+	<section class="container-1100 container-centered home">
+		<h2>Buttons</h2>
+		<article class="flex flex-row-wrap gap-8">
 			<button class="button button-padded button-assertive home__showError">Show Error Alert</button>
 			<button class="button button-padded button-positive home__showInformation">Show Information Alert</button>
 			<button class="button button-padded button-balanced home__showSuccess">Show Success Alert</button>
 			<button class="button button-padded button-energized home__showWarning">Show Warning Alert</button>
 			<button class="button button-padded button-juicy">Juicy</button>
 			<button class="button button-padded button-neutral">Neutral</button>
-		</div>
+		</article>
 		
+		<br>
 		<h2>Modals</h2>
-		<button class="button button-padded button-positive home__openModalButton">Open an alert modal</button>
-		<button class="button button-padded button-balanced-dark home__openShortStoryButton">Short Story</button>
-	</div>
+		<article class="flex flex-row-wrap gap-8">
+			<button class="button button-padded button-positive home__openModalButton">Open an alert modal</button>
+			<button class="button button-padded button-balanced-dark home__openShortStoryButton">Short Story</button>
+		</article>
+	</section>
 </template>
 
 <template name="alertModal">

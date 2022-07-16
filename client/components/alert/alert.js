@@ -40,6 +40,8 @@ Template.alert.onCreated(function()
 {
 	let instance = this;
 
+	instance.isClosing = new ReactiveVar(null);
+	
 	this.removeSelf = function()
 	{
 		if(!instance.firstNode)
@@ -47,7 +49,7 @@ Template.alert.onCreated(function()
 			return;
 		}
 		aliveAlerts.set(aliveAlerts.get() - 1);
-		instance.firstNode.classList.add("fadeOut");
+		instance.isClosing.set(true);
 		Meteor.setTimeout(function()
 		{
 			Blaze.remove(instance.view);
@@ -72,6 +74,10 @@ Template.alert.helpers(
 	isAlertType: function(type)
 	{
 		return this.type === type;
+	},
+	isClosing: function()
+	{
+		return Template.instance().isClosing.get() ? "isClosing" : "";
 	}
 });
 

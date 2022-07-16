@@ -26,6 +26,12 @@ modal-backdrop {
 	grid-template-rows: 48px 1fr 48px;
 	
 	background-color: hsla(0, 0%, 20%, 80%);
+	
+	&.isClosing {
+		animation-name: fadeOut;
+		animation-duration: 0.3s;
+		animation-fill-mode: forwards;
+	}
 }
 
 modal-wrapper {
@@ -46,7 +52,7 @@ modal-wrapper {
 	
 	transition: transform 0.3s ease-in-out;
 	
-	&.popOut {
+	&.isClosing {
 		animation-name: blindUp;
 		animation-duration: 0.5s;
 		animation-fill-mode: forwards;

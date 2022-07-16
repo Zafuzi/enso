@@ -3,7 +3,7 @@
 </template>
 
 <template name="alert">
-	<alert class="alert {{type}}">
+	<alert class="alert {{type}} {{isClosing}}">
 		{{#if (isAlertType "success")}}
 			<i class="icon ion-android-checkmark-circle"></i>
 		{{/if}}
