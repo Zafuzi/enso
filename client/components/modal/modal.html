@@ -1,0 +1,16 @@
+<template name="modal">
+	{{#if isModalOpen}}
+		<modal-backdrop></modal-backdrop>
+		<modal-wrapper>
+			<modal class="{{options.class}}">
+				<modal-header>
+					  <i class="icon ion-android-close modal__closeButton"></i>
+				</modal-header>
+				<modal-content>
+					{{> Template.dynamic template=template }}
+				</modal-content>
+				<modal-footer></modal-footer>
+			</modal>
+		</modal-wrapper>
+	{{/if}}
+</template>
