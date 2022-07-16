@@ -10,7 +10,7 @@ Template.modal.onCreated(function()
 	self.template = new ReactiveVar(null);
 	self.footerTemplate = new ReactiveVar(null);
 	self.options = new ReactiveVar(null);
-	self.popOut = new ReactiveVar(null);
+	self.isClosing = new ReactiveVar(null);
 	
 	self.openModal = function(templateName, options)
 	{
@@ -24,13 +24,13 @@ Template.modal.onCreated(function()
 	
 	self.closeModal = function()
 	{
-		self.popOut.set(true);
+		self.isClosing.set(true);
 		Meteor.setTimeout(function()
 		{
 			self.status.set("closed");
 			self.template.set(null);
 			self.options.set(null);
-			self.popOut.set(null);
+			self.isClosing.set(null);
 		}, 300);
 	}
 	
@@ -67,9 +67,9 @@ Template.modal.helpers(
 	{
 		return Template.instance().options.get();
 	},
-	popOut: function()
+	isClosing: function()
 	{
-		return Template.instance().popOut.get() ? "popOut" : "";
+		return Template.instance().isClosing.get() ? "isClosing" : "";
 	}
 });
 

@@ -26,17 +26,21 @@ modal-backdrop {
 	grid-template-rows: 48px 1fr 48px;
 	
 	background-color: hsla(0, 0%, 20%, 80%);
+	
+	&.isClosing {
+		animation-name: fadeOut;
+		animation-duration: 0.3s;
+		animation-fill-mode: forwards;
+	}
 }
 
 modal-wrapper {
 	width: 100vw;
 	height: 100vh;
 	
-	display: grid;
-	justify-content: center;
-	align-items: flex-start;
-	
-	grid-template-columns: 1fr;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 	
 	position: fixed;
 	top: 0;
@@ -48,7 +52,7 @@ modal-wrapper {
 	
 	transition: transform 0.3s ease-in-out;
 	
-	&.popOut {
+	&.isClosing {
 		animation-name: blindUp;
 		animation-duration: 0.5s;
 		animation-fill-mode: forwards;
@@ -76,7 +80,7 @@ modal, .modal {
 	
 	max-width: ~"calc(100% - 48px)";
 	
-	margin: 24px auto;
+	margin: 24px;
 	
 	@media (max-width: @thinner-breakpoint)
 	{
@@ -129,7 +133,6 @@ modal, .modal {
 
 	modal-footer {
 		display: block;
-		height: 48px;
 	}
 	
 	&__closeButton {

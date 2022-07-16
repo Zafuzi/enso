@@ -47,12 +47,23 @@
 		
 		padding: 0 22px;
 		
-		.icon {
-			font-size: 28pt;
+		& > .icon {
+			font-size: 24pt;
 			margin-right: 12px;
 		}
-
-
+		
+		&__closeButton {
+			font-size: 28pt;
+			position: absolute;
+			right: 8px;
+			top: 8px;
+			width: 48px;
+			height: 48px;
+			
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 		
 		&.success { background-color: @balanced; color: var(--alert-light-text); }
 		&.error { background-color: @assertive; color: var(--alert-light-text); }
@@ -63,13 +74,15 @@
 		animation-duration: 0.2s;
 		animation-fill-mode: forwards;
 		
-		transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, top 0.2s ease-in-out;
+		transition: transform 0.2s ease-in-out, 
+					opacity 0.2s ease-in-out,
+					top 0.2s ease-in-out;
 		
 		opacity: 1;
 		transform: scale(0);
 		
-		&.fadeOut {
-			animation-name: fadeOut;
+		&.isClosing {
+			animation-name: slideRight;
 		}
 		
 		&__closeButton {
@@ -83,11 +96,9 @@
 
 @keyframes fadeOut {
 	0% {
-		transform: scale(1);
 		opacity: 1;
 	}
 	100% {
-		transform: scale(0);
 		opacity: 0;
 	}
 }
@@ -107,6 +118,17 @@
 	}
 	100% {
 		transform: scale(0);
+	}
+}
+
+@keyframes slideRight {
+	0% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(100%);
+		opacity: 0;
 	}
 }
 

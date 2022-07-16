@@ -1,7 +1,7 @@
 <template name="modal">
 	{{#if isModalOpen}}
-		<modal-backdrop></modal-backdrop>
-		<modal-wrapper class="{{popOut}}">
+		<modal-backdrop class="{{isClosing}}"></modal-backdrop>
+		<modal-wrapper class="{{isClosing}}">
 			<modal class="modal {{options.class}}">
 				<modal-header>
 					<p>{{options.title}}</p>

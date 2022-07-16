@@ -28,7 +28,14 @@ Template.home.events(
 			title: "Alert..."
 		});
 	},
-
+	"click .home__openShortStoryButton": function()
+	{
+		openModal("modal__shortStory", {
+			class: "container-700",
+			title: "A short story...",
+			footerTemplate: "footer__shortStory"
+		});
+	},
 });
 
 Template.alertModal.events(
