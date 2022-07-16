@@ -1,5 +1,6 @@
 export var openModal = null;
 export var closeModal = null;
+export var pageBottom = window.innerHeight;
 
 Template.modal.onCreated(function()
 {
@@ -70,6 +71,10 @@ Template.modal.helpers(
 	isClosing: function()
 	{
 		return Template.instance().isClosing.get() ? "isClosing" : "";
+	},
+	pageBottom: function()
+	{
+		return pageBottom;
 	}
 });
 
@@ -79,4 +84,9 @@ Template.modal.events(
 	{
 		closeModal();
 	}
+});
+
+window.addEventListener("resize", function()
+{
+	pageBottom = window.innerHeight;
 });

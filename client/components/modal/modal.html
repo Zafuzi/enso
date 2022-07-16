@@ -1,7 +1,7 @@
 <template name="modal">
 	{{#if isModalOpen}}
 		<modal-backdrop class="{{isClosing}}"></modal-backdrop>
-		<modal-wrapper class="{{isClosing}}">
+		<modal-wrapper class="{{isClosing}}" style="max-height: {{pageBottom}}px">
 			<modal class="modal {{options.class}}">
 				<modal-header>
 					<p>{{options.title}}</p>
