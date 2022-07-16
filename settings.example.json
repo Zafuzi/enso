@@ -1,0 +1,9 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "ENV": "PRODUCTION",
+      "DEPLOY_HOSTNAME": "us-east-1.galaxy-deploy.meteor.com",
+      "MONGO_URL": "<mongo-url connection string>"
+    }
+  }
+}
