@@ -1,7 +1,21 @@
-@import "../../node_modules/coughdrop/coughdrop";
-
 :root {
-    --link-color: @positive;
+
+    --app-background: var(--darker);
+    --app-color: var(--lighter);
+
+    --primary: #79BD9A;
+    --primary-shaded: #496f5c;
+    --secondary: var(--lighter);
+
+    --lightest: #ffffff;
+    --lighter: #fafafa;
+    --light: #f1f1f1;
+    --neutral: #e8e8e8;
+    --dark: #888;
+    --darker: #181F2A;
+    --darkest: #000;
+    
+    --link-color: #0074c7;
 }
 
 * {
@@ -23,8 +37,8 @@ body, html {
 
     line-height: 1.2;
 
-    background-color: @lighter;
-    color: @darker;
+    background-color: var(--lighter);
+    color: var(--darker);
 }
 
 h1, h2, h3, h4, h5, h6
@@ -40,8 +54,6 @@ h1, h2, h3, h4, h5, h6
 
     font-weight: 700;
 
-    .linedNumbers;
-
     &__title {
         display: flex;
         flex-flow: row nowrap;
@@ -49,7 +61,7 @@ h1, h2, h3, h4, h5, h6
 
         h1 {
             font-size: 22pt;
-			color: @darker;
+			color: var(--darker);
         }
     }
 
@@ -61,7 +73,7 @@ h1, h2, h3, h4, h5, h6
 		
         a {
             &.active {
-                border-bottom: 2px solid @positive;
+                border-bottom: 2px solid var(--positive);
             }
         }
     }

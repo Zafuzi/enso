@@ -5,23 +5,23 @@
 <template name="alert">
 	<alert class="alert {{type}} {{isClosing}}">
 		{{#if (isAlertType "success")}}
-			<i class="icon ion-android-checkmark-circle"></i>
+            {{> icon "check_circle"}}
 		{{/if}}
 		
 		{{#if (isAlertType "error")}}
-			<i class="icon ion-nuclear"></i>
+            {{> icon "error"}}
 		{{/if}}
 		
 		{{#if (isAlertType "warning")}}
-			<i class="icon ion-android-warning"></i>
+            {{> icon "warning"}}
 		{{/if}}
 		
 		{{#if (isAlertType "information")}}
-			<i class="icon ion-ios-information-outline"></i>
+            {{> icon "info"}}
 		{{/if}}
 		<span>{{content}}</span>
 		<span class="alert__closeButton">
-			<i class="icon ion-android-close"></i>
+            {{> icon "cancel"}}
 		</span>
 	</alert>
 </template>
