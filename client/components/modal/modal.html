@@ -1,23 +1,23 @@
 <template name="modal">
 	{{#if isModalOpen}}
-		<modal-backdrop class="{{isClosing}}"></modal-backdrop>
-		<modal-wrapper class="{{isClosing}}" style="max-height: {{pageBottom}}px">
-			<modal class="modal {{options.class}}">
-				<modal-header>
+		<div class="modal-backdrop {{isClosing}}"></div>
+		<div class="modal-wrapper {{isClosing}}" style="max-height: {{pageBottom}}px">
+			<div class="modal {{options.class}}">
+				<div class="modal-header">
 					<p>{{options.title}}</p>
 					<span class="modal__closeButton">
                         {{> icon "cancel"}}
 					</span>
-				</modal-header>
-				<modal-content>
+				</div>
+				<div class="modal-content">
 					{{> Template.dynamic template=template }}
-				</modal-content>
+				</div>
 				{{#if footerTemplate}}
-					<modal-footer>
+					<div class="modal-footer">
 						{{> Template.dynamic template=footerTemplate }}
-					</modal-footer>
+					</div>
 				{{/if}}
-			</modal>
-		</modal-wrapper>
+			</div>
+		</div>
 	{{/if}}
 </template>

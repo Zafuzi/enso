@@ -80,10 +80,19 @@ Template.modal.helpers(
 
 Template.modal.events(
 {
-	"click .modal__closeButton": function(event, instance)
+	"click .modal__closeButton"(event, instance)
 	{
 		closeModal();
-	}
+	},
+    "click .modal-wrapper"(event)
+    {
+        // ignore events that are not on the wrapper itself
+        if (event.target !== event.currentTarget) {
+            return;
+        }
+        
+        closeModal();
+    }
 });
 
 window.addEventListener("resize", function()
