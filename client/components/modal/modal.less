@@ -3,7 +3,7 @@
 	--modal-header-color: var(--lighter);
 }
 
-modal-backdrop {
+.modal-backdrop {
 	z-index: var(--modal-backdrop-index);
 	position: fixed;
 	top: 0;
@@ -27,7 +27,7 @@ modal-backdrop {
 	}
 }
 
-modal-wrapper {
+.modal-wrapper {
 
 	position: fixed;
 	
@@ -35,8 +35,6 @@ modal-wrapper {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	
-	max-height: -webkit-fill-available;
 	
 	display: flex;
 	justify-content: flex-start;
@@ -57,12 +55,12 @@ modal-wrapper {
 	}
 }
 
-modal, .modal {
+.modal {
 	position: relative;
 	z-index: var(--modal-index);
 	
 	border-radius: 10px;
-	border: 2px solid var(--light);
+	border: none; 
 	
 	overflow: hidden;
 
@@ -85,7 +83,7 @@ modal, .modal {
 		width: 100%;
 		height: 100%;
 		min-width: 300px;
-		border-radius: 0px;
+		border-radius: 0;
 		border: none;
 		margin: 0;
 	}
@@ -93,7 +91,7 @@ modal, .modal {
 	display: flex;
 	flex-direction: column;
 
-	modal-content {
+	.modal-content {
 		display: block;
 		height: 100%;
 		overflow-x: hidden;
@@ -101,7 +99,7 @@ modal, .modal {
 		flex-grow: 1;
 	}
 
-	modal-header {
+	.modal-header {
 		background-color: var(--modal-header-background);
 		color: var(--modal-header-color);
 		
@@ -125,11 +123,11 @@ modal, .modal {
 			width: 300px;
 			white-space: nowrap;
 			overflow: hidden;
-			text-overflow: ellipses;
+			text-overflow: ellipsis;
 		}
 	}
 
-	modal-footer {
+	.modal-footer {
 		display: block;
 	}
 	
