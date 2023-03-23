@@ -3,13 +3,13 @@
         <form class="grid col-1 gap-8 align-center" id="loginForm">
             
             {{#unless showLogin}}
-                <input type="text" class="form-control" id="username" placeholder="Username" required>
+                <input class="form-input" type="text" id="username" placeholder="Username" required>
             {{/unless}}
             
-            <input type="text" class="form-control" id="email" placeholder="Email" required>
-            <input type="password" class="form-control" id="password" placeholder="Password" required>
+            <input class="form-input" type="text" id="email" placeholder="Email" required>
+            <input class="form-input" type="password" id="password" placeholder="Password" required>
             
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="button button-positive">Submit</button>
             
             {{#if showLogin}}
                 <p>Don't have an account? <a href="/login" class="login__showRegister">Register</a></p>
