@@ -28,11 +28,15 @@ h1, h2, h3, h4, h5, h6
 }
 
 .appHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    gap: 24px;
+    
     font-weight: 700;
+    
+    @media (max-width: 700px) {
+        grid-template-columns: 1fr;
+    }
 
     &__title {
         display: flex;
@@ -42,6 +46,10 @@ h1, h2, h3, h4, h5, h6
         h1 {
             font-size: 22pt;
 			color: var(--darker);
+            
+            @media (max-width: 700px) {
+                text-align: center;
+            }
         }
     }
 
@@ -50,6 +58,10 @@ h1, h2, h3, h4, h5, h6
 		flex-flow: row wrap;
 		align-items: center;
 		justify-content: flex-end;
+        
+        @media (max-width: 500px) {
+            justify-content: center;
+        }
 		
         a {
             display: flex;
