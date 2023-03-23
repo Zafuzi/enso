@@ -3,7 +3,7 @@
         
         <div class="flex flex-row-wrap align-center justify-space-between gap-8">
             <h1>Dashboard</h1>
-            <button class="button button-assertive" id="logoutButton">Logout</button>
+            <button class="button button-assertive" id="logoutButton">{{> icon "logout"}} Logout</button>
         </div>
         
         <p>Username: {{currentUser.username}}</p>
@@ -11,9 +11,9 @@
             <p>
                 Email: {{address}}
                 {{#if verified}}
-                    <span class="balanced">Verified</span>
+                    <span class="balanced">Verified {{> icon "check_circle"}}</span>
                 {{else}}
-                    <span class="assertive">Not Verified</span>
+                    <span class="assertive">Not Verified {{> icon "block"}}</span>
                 {{/if}}
             </p>
         {{/each}}
