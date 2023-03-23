@@ -1,4 +1,4 @@
-import {isAdmin} from "../lib/lib";
+import {APP_VERSION, isAdmin} from "../lib/lib";
 
 Template.registerHelper("active__ifRouteActive", function(route)
 {
@@ -11,7 +11,7 @@ Template.registerHelper("isAdmin", function()
     return isAdmin(Meteor.userId());
 });
 
-Template.registerHelper('formatDate', function(date)
+Template.registerHelper("formatDate", function(date)
 {
     if (!date)
     {
@@ -19,4 +19,9 @@ Template.registerHelper('formatDate', function(date)
     }
 
     return moment(date).format('MMMM Do h:mm a');
+});
+
+Template.registerHelper("appVersion", function()
+{
+    return APP_VERSION;
 });
