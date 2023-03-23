@@ -1,0 +1,21 @@
+<template name="dashboard">
+    <section class="container-1100 container-padded container-centered">
+        
+        <div class="flex flex-row-wrap align-center justify-space-between gap-8">
+            <h1>Dashboard</h1>
+            <button class="button button-assertive" id="logoutButton">Logout</button>
+        </div>
+        
+        <p>Username: {{currentUser.username}}</p>
+        {{#each currentUser.emails}}
+            <p>
+                Email: {{address}}
+                {{#if verified}}
+                    <span class="balanced">Verified</span>
+                {{else}}
+                    <span class="assertive">Not Verified</span>
+                {{/if}}
+            </p>
+        {{/each}}
+    </section>
+</template>

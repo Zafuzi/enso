@@ -1,5 +1,9 @@
 @import "../../node_modules/coughdrop/coughdrop";
 
+:root {
+    --link-color: @positive;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -34,8 +38,6 @@ h1, h2, h3, h4, h5, h6
     align-items: center;
     justify-content: space-between;
 
-    padding: 24px;
-
     font-weight: 700;
 
     .linedNumbers;
@@ -69,4 +71,8 @@ a {
     text-decoration: none;
     color: var(--link-color);
     font-weight: 500;
+}
+
+input {
+    padding: 8px;
 }

@@ -1,6 +1,33 @@
 import {showAlert} from "../../components/alert/alert";
 import {closeModal, openModal} from "../../components/modal/modal";
 
+Template.modal__shortStory.onCreated(function()
+{
+    const instance = this;
+    
+    instance.loremContent = new ReactiveVar([]);
+
+    HTTP.call("GET", "https://picsum.photos/v2/list?page=2&limit=4", function(error, result)
+    {
+        if (error)
+        {
+            console.log("error", error);
+            instance.loremContent.set(error);
+        }
+        if (result)
+        {
+            instance.loremContent.set(result.data);
+        }
+    })
+});
+
+Template.modal__shortStory.helpers({
+    loremContent()
+    {
+        return Template.instance().loremContent.get();
+    }
+});
+
 Template.home.events(
 {
 	"click .home__showSuccess": function()
@@ -32,16 +59,8 @@ Template.home.events(
 	{
 		openModal("modal__shortStory", {
 			class: "container-700",
-			title: "A short story...",
+			title: "Some nice photos...",
 			footerTemplate: "footer__shortStory"
 		});
 	},
-});
-
-Template.alertModal.events(
-{
-	"click .home__closeModalButton": function()
-	{
-		closeModal();
-	}
 });

@@ -1,0 +1,21 @@
+<template name="login">
+    <section class="container-500 container-centered container-padded">
+        <form class="grid col-1 gap-8 align-center" id="loginForm">
+            
+            {{#unless showLogin}}
+                <input type="text" class="form-control" id="username" placeholder="Username" required>
+            {{/unless}}
+            
+            <input type="text" class="form-control" id="email" placeholder="Email" required>
+            <input type="password" class="form-control" id="password" placeholder="Password" required>
+            
+            <button type="submit" class="btn btn-default">Submit</button>
+            
+            {{#if showLogin}}
+                <p>Don't have an account? <a href="/login" class="login__showRegister">Register</a></p>
+            {{else}}
+                <p>Already have an account? <a href="/login" class="login__showLogin">Login</a></p>
+            {{/if}}
+        </form>
+    </section>
+</template>
