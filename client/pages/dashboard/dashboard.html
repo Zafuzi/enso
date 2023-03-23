@@ -2,10 +2,11 @@
     <section class="container-1100 container-padded container-centered">
         
         <div class="flex flex-row-wrap align-center justify-space-between gap-8">
-            <h1>Dashboard</h1>
-            <button class="button button-assertive" id="logoutButton">{{> icon "logout"}} Logout</button>
+            <h1>{{> icon "dashboard"}} Dashboard</h1>
+            <button class="button button-positive-ghost" id="logoutButton">{{> icon "logout"}} Logout</button>
         </div>
         
+        <p>UserID: {{currentUser._id}}</p>
         <p>Username: {{currentUser.username}}</p>
         {{#each currentUser.emails}}
             <p>
@@ -17,5 +18,32 @@
                 {{/if}}
             </p>
         {{/each}}
+        
+        <hr/>
+        {{#if isAdmin}}
+            <!-- admin only send message form -->
+            <h2>{{> icon "send"}} Send a message </h2>
+            <form id="sendMessageForm" class="container-500 flex flex-column gap-8">
+                <input type="text" name="message" placeholder="Message" required/>
+                <input type="text" name="receiverId" placeholder="Receiver ID" required/>
+                <button class="button button-balanced" type="submit">Send</button>
+            </form>
+            <hr/>
+        {{/if}}
+        <h2>{{> icon "message"}} Messages - ({{messagesCount}})</h2>
+        <div class="flex flex-column gap-8">
+            {{#each messages}}
+                <div class="dashboard__message">
+                    <div class="flex flex-row-nowrap justify-space-between align-center gap-8">
+                        <p class="dashboard__message__tag linedNumbers">
+                            {{> icon "account_circle"}} {{sender.username}}
+                            - {{formatDate createdAt}}
+                        </p>
+                        <button class="button button-assertive deleteMessage" data-id="{{_id}}">{{> icon "delete"}} Delete</button>
+                    </div>
+                    <p class="dashboard__message__content">{{message}}</p>
+                </div>
+            {{/each}}
+        </div>
     </section>
 </template>

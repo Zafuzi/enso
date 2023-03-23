@@ -25,3 +25,4 @@ accounts-base@2.2.7
 http
 session@1.2.1
 iron:router
+momentjs:moment
