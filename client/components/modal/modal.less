@@ -1,12 +1,10 @@
-@import "../../../node_modules/coughdrop/coughdrop";
-
 :root {
-	--modal-header-background: @positive-dark;
-	--modal-header-color: @lighter;
+	--modal-header-background: var(--positive-dark);
+	--modal-header-color: var(--lighter);
 }
 
 modal-backdrop {
-	z-index: @modal-backdrop-index;
+	z-index: var(--modal-backdrop-index);
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -14,7 +12,7 @@ modal-backdrop {
 	width: 100vw;
 	height: 100vh;
 	
-	color: @dark;
+	color: var(--dark);
 	
 	display: grid;
 	
@@ -46,7 +44,7 @@ modal-wrapper {
 
 	width: 100%;
 	
-	z-index: @modal-index;
+	z-index: var(--modal-index);
 	
 	flex-direction: column;
 	
@@ -61,10 +59,10 @@ modal-wrapper {
 
 modal, .modal {
 	position: relative;
-	z-index: @modal-index;
+	z-index: var(--modal-index);
 	
 	border-radius: 10px;
-	border: 2px solid @light;
+	border: 2px solid var(--light);
 	
 	overflow: hidden;
 
@@ -72,8 +70,8 @@ modal, .modal {
 	animation-duration: 0.3s;
 	animation-fill-mode: forwards;
 
-	background-color: @light;
-	color: @dark;
+	background-color: var(--light);
+	color: var(--dark);
 	
 	min-width: 400px;
 	min-height: 200px;
@@ -82,7 +80,7 @@ modal, .modal {
 	
 	margin: 24px;
 	
-	@media (max-width: @small-breakpoint)
+	@media (max-width: var(--small-breakpoint))
 	{
 		width: 100%;
 		height: 100%;

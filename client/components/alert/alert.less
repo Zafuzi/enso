@@ -1,8 +1,6 @@
-@import "../../../node_modules/coughdrop/coughdrop";
-
 :root {
-	--alert-light-text: @lighter;
-	--alert-dark-text: @darker;
+	--alert-light-text: var(--lighter);
+	--alert-dark-text: var(--darker);
 }
 
 .alerts {
@@ -13,7 +11,7 @@
 	
 	width: 100vw;
 	
-	z-index: @alert-index;
+	z-index: var(--alert-index);
 	
 	display: flex;
 	flex-flow: column;
@@ -34,8 +32,8 @@
 		align-items: center;
 		justify-content: flex-start;
 		
-		background-color: @neutral-dark;
-		color: @light;
+		background-color: var(--neutral-dark);
+		color: var(--light);
 
 		box-shadow: 2px 4px 2px hsla(0, 0%, 0%, 3%);
 		border-radius: 5px;
@@ -60,10 +58,10 @@
 			align-items: center;
 		}
 		
-		&.success { background-color: @balanced; color: var(--alert-light-text); }
-		&.error { background-color: @assertive; color: var(--alert-light-text); }
-		&.warning { background-color: @energized; color: var(--alert-dark-text); }
-		&.information { background-color: @positive-dark; color: var(--alert-light-text); }
+		&.success { background-color: var(--balanced); color: var(--alert-light-text); }
+		&.error { background-color: var(--assertive); color: var(--alert-light-text); }
+		&.warning { background-color: var(--energized); color: var(--alert-dark-text); }
+		&.information { background-color: var(--positive-dark); color: var(--alert-light-text); }
 		
 		animation-name: popIn;
 		animation-duration: 0.2s;
