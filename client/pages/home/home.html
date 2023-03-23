@@ -6,15 +6,15 @@
 			<button class="button button-padded button-positive home__showInformation">{{>icon "info"}} Show Information Alert</button>
 			<button class="button button-padded button-balanced home__showSuccess">{{>icon "check_circle"}} Show Success Alert</button>
 			<button class="button button-padded button-energized home__showWarning">{{>icon "warning"}} Show Warning Alert</button>
-			<button class="button button-padded button-juicy">Juicy</button>
-			<button class="button button-padded button-neutral">Neutral</button>
+			<button class="button button-padded button-juicy" disabled>{{> icon "block"}} Juicy</button>
+			<button class="button button-padded button-neutral" disabled>{{> icon "block"}} Neutral</button>
 		</article>
 		
 		<br>
 		<h2>Modals</h2>
 		<article class="flex flex-row-wrap gap-8">
-			<button class="button button-padded button-positive home__openModalButton">Open an alert modal</button>
-			<button class="button button-padded button-balanced-dark home__openShortStoryButton">Short Story</button>
+			<button class="button button-padded button-positive home__openModalButton">{{>icon "open_in_full"}} Open an alert modal</button>
+			<button class="button button-padded button-balanced-dark home__openShortStoryButton">{{>icon "open_in_full"}} Short Story</button>
 		</article>
 	</section>
 </template>
@@ -37,7 +37,7 @@
 <template name="footer__shortStory">
 	<div class="padding-16 flex flex-row-nowrap align-center justify-center bg-lighter">
 		<a href="https://picsum.photos" class="darker font-600" target="_blank">
-			Data collected from <i class="icon ion-android-open"></i>
+			Data collected from {{> icon "open_in_new"}}
 		</a>
 	</div>
 </template>
