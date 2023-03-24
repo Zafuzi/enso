@@ -14,7 +14,7 @@ Template.dashboard.onCreated(function()
                 throw new Meteor.Error('Could not get messages', error);
             }
 
-            console.log(messages);
+            // console.log(messages);
             instance.messages.set(messages);
         });
     }

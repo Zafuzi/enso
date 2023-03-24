@@ -18,10 +18,20 @@
 	
 	gap: 8px;
 	margin-top: 8px;
+    
+    @media (max-width: 700px)
+    {
+        margin-top: 0;
+    }
 	
 	.alert {
 		width: 90%;
 		height: 64px;
+        
+        @media (max-width: 700px)
+        {
+            width: 100%;
+        }
 		
 		margin: 0 auto;
 		
@@ -84,55 +94,5 @@
 		}
 		
 		overflow: hidden;
-	}
-}
-
-@keyframes fadeOut {
-	0% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
-}
-
-@keyframes popIn {
-	0% {
-		transform: scale(0);
-	}
-	100% {
-		transform: scale(1);
-	}
-}
-
-@keyframes popOut {
-	0% {
-		transform: scale(1);
-	}
-	100% {
-		transform: scale(0);
-	}
-}
-
-@keyframes slideRight {
-	0% {
-		transform: translateX(0);
-		opacity: 1;
-	}
-	100% {
-		transform: translateX(100%);
-		opacity: 0;
-	}
-}
-
-@keyframes blindUp {
-	0% {
-		transform: translateY(0);
-	}
-	30% {
-		transform: translateY(200px);
-	}
-	100% {
-		transform: translateY(-200%);
 	}
 }

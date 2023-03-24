@@ -15,6 +15,16 @@ Template.modal.onCreated(function()
 	
 	self.openModal = function(templateName, options)
 	{
+        if(!options.openAnimation)
+        {
+            options.openAnimation = "fadeIn";
+        }
+        
+        if(!options.closeAnimation)
+        {
+            options.closeAnimation = "blindUp";
+        }
+        
 		self.template.set(templateName);
 		self.footerTemplate.set(options?.footerTemplate);
 		self.options.set(options);
