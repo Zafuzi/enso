@@ -1,7 +1,7 @@
 <template name="modal">
 	{{#if isModalOpen}}
 		<div class="modal-backdrop {{isClosing}}"></div>
-		<div class="modal-wrapper {{isClosing}}" style="max-height: {{pageBottom}}px">
+		<div class="modal-wrapper {{isClosing}} open-{{options.openAnimation}} close-{{options.closeAnimation}}" style="max-height: {{pageBottom}}px">
 			<div class="modal {{options.class}}">
 				<div class="modal-header">
 					<p>{{options.title}}</p>
