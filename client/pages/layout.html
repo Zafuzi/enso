@@ -29,6 +29,20 @@
     </div>
 
     <div class="{{class_isDrawerOpen}}" id="App_drawer">
+        <div id="App_drawer_header">
+            <div class="flex flex-row-nowrap align-center justify-space-between">
+                <p id="App_drawer_header_profile">{{> icon "account_circle"}}</p>
+                {{#if currentUser}}
+                    <a href={{pathFor "logout"}} class="{{active__ifRouteActive 'logout'}}">{{> icon "logout"}} Logout</a>
+                {{else}}
+                    <a href={{pathFor "login"}} class="{{active__ifRouteActive 'login'}}">{{> icon "login"}} Login</a>
+                {{/if}}
+            </div>
+            <div>
+                <p>{{username}}</p>
+                <p>{{userEmail}}</p>
+            </div>
+        </div>
         {{> AppNav}}
     </div>
     {{> alerts}}
@@ -41,8 +55,6 @@
         <a href={{pathFor "about"}} class="{{active__ifRouteActive 'about'}}">{{> icon "info"}} About</a>
         {{#if currentUser}}
             <a href={{pathFor "dashboard"}} class="{{active__ifRouteActive 'dashboard'}}">{{> icon "dashboard"}} Dashboard</a>
-        {{else}}
-            <a href={{pathFor "login"}} class="{{active__ifRouteActive 'login'}}">{{> icon "login"}} Login</a>
         {{/if}}
     </nav>
 </template>

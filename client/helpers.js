@@ -25,3 +25,13 @@ Template.registerHelper("appVersion", function()
 {
     return APP_VERSION;
 });
+
+Template.registerHelper("userEmail", function()
+{
+    return Meteor.user().emails[0].address;
+});
+
+Template.registerHelper("username", function()
+{
+    return Meteor.user().username;
+});
