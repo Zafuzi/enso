@@ -60,7 +60,9 @@ Template.home.events(
 		openModal("modal__shortStory", {
 			class: "container-700",
 			title: "Some nice photos...",
-			footerTemplate: "footer__shortStory"
+			footerTemplate: "footer__shortStory",
+            openAnimation: "popIn",
+            closeAnimation: "popOut"
 		});
 	},
 });
