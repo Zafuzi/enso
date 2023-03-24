@@ -1,29 +1,48 @@
 <template name="layout">
-	<header class="container-1100 container-centered container-padded appHeader">
-        <span class="appHeader__title gap-8">
-            <a href={{pathFor "home"}}>
-                <h1><span class="icon">radio_button_unchecked</span> Ensō - {{appVersion}}</h1>
-            </a>
-        </span>
-        <nav class="gap-24 appHeader__nav">
-			<div class="flex gap-16">
-				<a href={{pathFor "home"}} class="{{active__ifRouteActive 'home'}}">{{> icon "home"}} Home</a>
-				<a href={{pathFor "about"}} class="{{active__ifRouteActive 'about'}}">{{> icon "info"}} About</a>
-                {{#if currentUser}}
-                    <a href={{pathFor "dashboard"}} class="{{active__ifRouteActive 'dashboard'}}">{{> icon "dashboard"}} Dashboard</a>
-                {{else}}
-                    <a href={{pathFor "login"}} class="{{active__ifRouteActive 'login'}}">{{> icon "login"}} Login</a>
-                {{/if}}
-			</div>
-        </nav>
-	</header>
+    <div class="{{class_isDrawerOpen}}" id="App">
+        <header class="{{class_isDrawerOpen}}" id="App_header">
+            <h1>Enso</h1>
+            
+            <div class="flex flex-row-nowrap align-center justify-between gap-16">
+                {{#unless showAppDrawer}}
+                    {{> AppNav}}
+                {{/unless}}
+                <button id="App_header_toggleDrawer"> 
+                    {{#if isDrawerOpen}}
+                        {{> icon "close"}}
+                    {{else}}
+                        {{> icon "menu"}}
+                    {{/if}}
+                </button>
+            </div>
+        </header>
 
-	<main>
-		{{> yield}}
-	</main>
+        <main class="{{class_isDrawerOpen}}" id="App_content">
+            {{> yield}}
+        </main>
 
-	<footer></footer>
-	
-	{{> alerts}}
-	{{> modal}}
+        {{#if false}}
+            <footer class="{{class_isDrawerOpen}}" id="App_footer">
+                <p class="text-center font-600 padding-8">{{appVersion}}</p>
+            </footer>
+        {{/if}}
+    </div>
+
+    <div class="{{class_isDrawerOpen}}" id="App_drawer">
+        {{> AppNav}}
+    </div>
+    {{> alerts}}
+    {{> modal}}
+</template>
+
+<template name="AppNav">
+    <nav id="App_nav">
+        <a href={{pathFor "home"}} class="{{active__ifRouteActive 'home'}}">{{> icon "home"}} Home</a>
+        <a href={{pathFor "about"}} class="{{active__ifRouteActive 'about'}}">{{> icon "info"}} About</a>
+        {{#if currentUser}}
+            <a href={{pathFor "dashboard"}} class="{{active__ifRouteActive 'dashboard'}}">{{> icon "dashboard"}} Dashboard</a>
+        {{else}}
+            <a href={{pathFor "login"}} class="{{active__ifRouteActive 'login'}}">{{> icon "login"}} Login</a>
+        {{/if}}
+    </nav>
 </template>
