@@ -47,11 +47,17 @@ Template.layout.events({
     {
         Template.instance().isDrawerOpen.set(!Template.instance().isDrawerOpen.get());
     },
-    "click a"(event, instance)
+    "click"(event, instance)
     {
-        if(instance.isDrawerOpen.get())
+        // if the event was not on the drawer, close it
+        if(event.target.closest("#App_drawer"))
         {
-            instance.isDrawerOpen.set(false);
+            // allow links to close
+            if(!event.target.closest("a"))
+            {
+                return;
+            }
         }
+        instance.isDrawerOpen.set(false);
     }
 });
