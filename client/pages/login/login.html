@@ -1,5 +1,10 @@
 <template name="login">
     <section class="container-500 container-centered container-padded">
+        {{#if showLogin}}
+            <h2>{{> icon "login"}} Login</h2>
+        {{else}}
+            <h2>{{> icon "app_registration"}} Register</h2>
+        {{/if}}
         <form class="grid col-1 gap-8 align-center" id="loginForm">
             
             {{#unless showLogin}}
