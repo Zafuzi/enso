@@ -28,10 +28,10 @@ Template.registerHelper("appVersion", function()
 
 Template.registerHelper("userEmail", function()
 {
-    return Meteor.user().emails[0].address;
+    return Meteor.user()?.emails[0]?.address;
 });
 
 Template.registerHelper("username", function()
 {
-    return Meteor.user().username;
+    return Meteor.user()?.username;
 });

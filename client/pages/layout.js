@@ -43,21 +43,16 @@ Template.layout.helpers({
 });
 
 Template.layout.events({
-    "click #App_header_toggleDrawer"()
+    "click #App_drawer a, click #App_content, click #App_header, click #App_footer"(event, instance)
     {
+        if(instance.isDrawerOpen.get())
+        {
+            instance.isDrawerOpen.set(false);
+        }
+    },
+    "click #App_header_toggleDrawer"(event)
+    {
+        event.stopPropagation();
         Template.instance().isDrawerOpen.set(!Template.instance().isDrawerOpen.get());
     },
-    "click"(event, instance)
-    {
-        // if the event was not on the drawer, close it
-        if(event.target.closest("#App_drawer"))
-        {
-            // allow links to close
-            if(!event.target.closest("a"))
-            {
-                return;
-            }
-        }
-        instance.isDrawerOpen.set(false);
-    }
 });
