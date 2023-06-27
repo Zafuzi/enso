@@ -36,7 +36,25 @@ Template.login.events({
         const password = event.target.password?.value;
         
         const isLogin = template.showLogin.get();
-        
+
+
+        // disable form for 1 second
+        event.target.email?.setAttribute("disabled", "disabled");
+        event.target.username?.setAttribute("disabled", "disabled");
+        event.target.password?.setAttribute("disabled", "disabled");
+
+        // disable submit button
+        event.target.querySelector("button[type=submit]")?.setAttribute("disabled", "disabled");
+
+
+        Meteor.setTimeout(function()
+        {
+            event.target.email?.removeAttribute("disabled");
+            event.target.username?.removeAttribute("disabled");
+            event.target.password?.removeAttribute("disabled");
+            event.target.querySelector("button[type=submit]")?.removeAttribute("disabled");
+        }, 1000);
+
         if (isLogin)
         {
             Meteor.loginWithPassword(username || email, password, function(error: Meteor.Error)
