@@ -63,7 +63,7 @@ input {
     
     &_header {
         height: 64px;
-        background-color: var(--positive-darker);
+        background-color: var(--neutral-lighter);
         
         display: grid;
         grid-template-columns: 1fr auto;
@@ -75,13 +75,13 @@ input {
         h1 {
             margin: 0;
             padding: 0;
-            color: var(--lighter);
+            color: var(--darker);
         }
         
         &_toggleDrawer {
             font-size: 24pt;
             padding: 8px;
-            color: var(--lighter);
+            color: var(--darker);
             background: none;
             border: none;
         }
@@ -104,14 +104,14 @@ input {
             gap: 4px;
             
             padding: 8px 16px;
-            color: var(--light);
+            color: var(--neutral);
             
             font-size: 14pt;
             font-weight: 600;
 
             &.active {
-                color: var(--lighter);
-                border-bottom: 2px solid var(--lighter);
+                color: var(--darker);
+                border-bottom: 2px solid var(--darker);
             }
         }
     }
