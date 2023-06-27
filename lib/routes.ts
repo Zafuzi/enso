@@ -11,6 +11,11 @@ if (Meteor.isClient)
 		
 		waitOn: function()
 		{
+			if(!Meteor.userId())
+			{
+				return;
+			}
+
 			return Meteor.subscribe("userData");
 		},
 		onBeforeAction: function()
