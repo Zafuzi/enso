@@ -1,4 +1,10 @@
-import {showAlert} from "../../components/alert/alert";
+import {Instance} from "../../helpers";
+
+interface tDashboard extends Blaze.TemplateInstance
+{
+    messages: ReactiveVar<any[]>;
+    refresh: () => void;
+}
 
 Template.dashboard.onCreated(function()
 {
@@ -10,7 +16,6 @@ Template.dashboard.onCreated(function()
     {
         Meteor.call('getMessagesForCurrentUser', (error, messages) => {
             if(error) {
-                showAlert("error", "Could not get messages", error);
                 throw new Meteor.Error('Could not get messages', error);
             }
 
@@ -30,11 +35,11 @@ Template.dashboard.onRendered(function()
 Template.dashboard.helpers({
     messagesCount()
     {
-        return Template.instance().messages.get().length;
+        return (<tDashboard>Instance()).messages.get().length;
     },
     messages()
     {
-        return Template.instance().messages.get();
+        return (<tDashboard>Instance()).messages.get();
     }
 });
 
@@ -53,10 +58,10 @@ Template.dashboard.events({
         const message = event.target.message.value;
         
         
-        Meteor.call('sendMessage', receiverId, message, (error, result) => {
+        Meteor.call('sendMessage', receiverId, message, (error: Meteor.Error) => {
             if(error) {
-                showAlert("error", `Could not send message: ${error?.reason}`);
-                throw new Meteor.Error('Could not send message', error);
+                console.error("error", `Could not send message: ${error.reason}`);
+                return;
             }
 
             instance.refresh();
@@ -68,10 +73,10 @@ Template.dashboard.events({
         
         const messageId = event.target.dataset?.id;
         
-        Meteor.call('deleteMessage', messageId, (error, result) => {
+        Meteor.call('deleteMessage', messageId, (error: Meteor.Error) => {
             if(error) {
-                showAlert("error", `Could not delete message: ${error?.reason}`);
-                throw new Meteor.Error('Could not delete message', error);
+                console.error("error", `Could not delete message: ${error.reason}`);
+                return;
             }
             
             instance.refresh();

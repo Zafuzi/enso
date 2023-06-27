@@ -9,13 +9,6 @@
 			<button class="button button-juicy" disabled>{{> icon "block"}} Juicy</button>
 			<button class="button button-neutral" disabled>{{> icon "block"}} Neutral</button>
 		</article>
-		
-		<br>
-		<h2>Modals</h2>
-		<article class="flex flex-row-wrap gap-8">
-			<button class="button button-positive home__openModalButton">{{>icon "open_in_full"}} Open an alert modal</button>
-			<button class="button button-balanced button-balanced-dark home__openShortStoryButton">{{>icon "open_in_full"}} Short Story</button>
-		</article>
 	</section>
 </template>
 
@@ -23,21 +16,5 @@
 	<div class="alertModal">
 		<p>This modal is meant to inform the user of something, or perhaps it will contain an action for the user to perform.</p>
 		<p>Either way, this is a modal, it is useful.</p>
-	</div>
-</template>
-
-<template name="modal__shortStory">
-	<div class="container-padded modal__shortStory">
-        {{#each image in loremContent}}
-            <img src="{{image.download_url}}" width="100%" class="modal__shortStory__image">
-        {{/each}}
-	</div>
-</template>
-
-<template name="footer__shortStory">
-	<div class="padding-16 flex flex-row-nowrap align-center justify-center bg-lighter">
-		<a href="https://picsum.photos" class="darker font-600" target="_blank">
-			Data collected from {{> icon "open_in_new"}}
-		</a>
 	</div>
 </template>

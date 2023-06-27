@@ -1,14 +1,19 @@
-import {showAlert} from "../../components/alert/alert";
+import {Instance} from "../../helpers";
+
+interface tLogin extends Blaze.TemplateInstance {
+    showLogin: ReactiveVar<boolean>;
+}
 
 Template.login.onCreated(function()
 {
-    this.showLogin = new ReactiveVar(true);
+    const self : tLogin = this;
+    self.showLogin = new ReactiveVar(true);
 });
 
 Template.login.helpers({
     showLogin()
     {
-        return Template.instance().showLogin.get();
+        return (<tLogin>Instance()).showLogin.get();
     }
 });
 
@@ -33,12 +38,11 @@ Template.login.events({
         
         if (isLogin)
         {
-            Meteor.loginWithPassword(username || email, password, function(error)
+            Meteor.loginWithPassword(username || email, password, function(error: Meteor.Error)
             {
                 if (error)
                 {
                     console.error(error);
-                    showAlert("error", error.reason);
                     return;
                 }
                 
@@ -48,12 +52,11 @@ Template.login.events({
             return;
         }
         
-        Accounts.createUser({email, username, password}, function(error)
+        Accounts.createUser({email, username, password}, function(error: Meteor.Error)
         {
             if (error)
             {
                 console.error(error);
-                showAlert("error", error.reason);
             }
             
             Router.go("/");
