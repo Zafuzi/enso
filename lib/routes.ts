@@ -11,7 +11,7 @@ if (Meteor.isClient)
 		
 		waitOn: function()
 		{
-			Meteor.subscribe("userData");
+			return Meteor.subscribe("userData");
 		},
 		onBeforeAction: function()
 		{

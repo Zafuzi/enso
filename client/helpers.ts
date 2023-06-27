@@ -1,5 +1,7 @@
 import {APP_VERSION, isAdmin} from "../lib/lib";
 
+export const Instance = Template.instance;
+
 Template.registerHelper("active__ifRouteActive", function(route)
 {
     let r = Router.current().route.getName();
@@ -18,7 +20,11 @@ Template.registerHelper("formatDate", function(date)
         return;
     }
 
-    return moment(date).format('MMMM Do h:mm a');
+    return new Date().toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    });
 });
 
 Template.registerHelper("appVersion", function()

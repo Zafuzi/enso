@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "ES2019",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "outDir": "./test/ts-out",
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "test/**",
+    "tc-out",
+    "**/seeds/**"
+  ]
+}

@@ -7,12 +7,8 @@
                 {{#unless showAppDrawer}}
                     {{> AppNav}}
                 {{/unless}}
-                <button id="App_header_toggleDrawer"> 
-                    {{#if isDrawerOpen}}
-                        {{> icon "close"}}
-                    {{else}}
-                        {{> icon "menu"}}
-                    {{/if}}
+                <button id="App_header_toggleDrawer">
+					{{> icon "menu"}}
                 </button>
             </div>
         </header>
@@ -31,30 +27,46 @@
     <div class="{{class_isDrawerOpen}}" id="App_drawer">
         <div id="App_drawer_header">
             <div class="flex flex-row-nowrap align-center justify-space-between">
-                <p id="App_drawer_header_profile">{{> icon "account_circle"}}</p>
-                {{#if currentUser}}
-                    <a href={{pathFor "logout"}} class="{{active__ifRouteActive 'logout'}}">{{> icon "logout"}} Logout</a>
-                {{else}}
-                    <a href={{pathFor "login"}} class="{{active__ifRouteActive 'login'}}">{{> icon "login"}} Login</a>
-                {{/if}}
-            </div>
-            <div>
-                <p>{{username}}</p>
-                <p>{{userEmail}}</p>
+                <div id="App_drawer_header_profile">
+					<p id="App_drawer_header_profile_picture">{{> icon "account_circle"}}</p>
+					<div class="flex flex-column gap-2">
+						<p id="App_drawer_header_profile_username">{{username}}</p>
+						<p id="App_drawer_header_profile_email">{{userEmail}}</p>
+					</div>
+				</div>
+				<button id="App_header_toggleDrawer">
+					{{> icon "close"}}
+				</button>
             </div>
         </div>
-        {{> AppNav}}
+        {{> DrawerNav}}
     </div>
-    {{> alerts}}
-    {{> modal}}
+</template>
+
+<template name="DrawerNav">
+    <nav id="App_nav">
+        <a href={{pathFor "home"}} class="{{active__ifRouteActive 'home'}}">{{> icon "home"}} Home</a>
+        <a href={{pathFor "about"}} class="{{active__ifRouteActive 'about'}}">{{> icon "info"}} About</a>
+		{{#if currentUser}}
+			<a href={{pathFor "dashboard"}} class="{{active__ifRouteActive 'dashboard'}}">{{> icon "dashboard"}} Dashboard</a>
+		{{/if}}
+		<hr/>
+		{{#if currentUser}}
+			<a href={{pathFor "logout"}} class="{{active__ifRouteActive 'logout'}}">{{> icon "logout"}} Logout</a>
+		{{else}}
+			<a href={{pathFor "login"}} class="{{active__ifRouteActive 'login'}}">{{> icon "login"}} Login</a>
+		{{/if}}
+	</nav>
 </template>
 
 <template name="AppNav">
     <nav id="App_nav">
         <a href={{pathFor "home"}} class="{{active__ifRouteActive 'home'}}">{{> icon "home"}} Home</a>
         <a href={{pathFor "about"}} class="{{active__ifRouteActive 'about'}}">{{> icon "info"}} About</a>
-        {{#if currentUser}}
-            <a href={{pathFor "dashboard"}} class="{{active__ifRouteActive 'dashboard'}}">{{> icon "dashboard"}} Dashboard</a>
-        {{/if}}
+		{{#if currentUser}}
+			<a href={{pathFor "logout"}} class="{{active__ifRouteActive 'logout'}}">{{> icon "logout"}} Logout</a>
+		{{else}}
+			<a href={{pathFor "login"}} class="{{active__ifRouteActive 'login'}}">{{> icon "login"}} Login</a>
+		{{/if}}
     </nav>
 </template>

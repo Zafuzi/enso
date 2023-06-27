@@ -1,1 +1,0 @@
-meteor deploy --settings settings.json enso.meteorapp.com

@@ -1,0 +1,149 @@
+{
+  "plugins": [
+    "meteor",
+    "@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "Router": "readonly",
+    "Meteor": "readonly",
+    "DDP": "readonly",
+    "Session": "readonly",
+    "Template": "readonly",
+    "Blaze": "readonly",
+    "Match": "readonly",
+    "check": "readonly",
+    "Tracker": "readonly",
+    "ReactiveVar": "readonly",
+    "EJSON": "readonly",
+    "HTTP": "readonly",
+    "Email": "readonly",
+    "Assets": "readonly",
+    "Spacebars": "readonly",
+    "global": "readonly",
+    "Log": "readonly",
+    "process": "readonly",
+    "WebApp": "readonly",
+    "WebAppInternals": "readonly",
+    "Package": "readonly",
+    "Npm": "readonly",
+    "Tinytest": "readonly",
+    "Random": "readonly",
+    "_": "readonly",
+    "$": "readonly",
+    "S3Policy": "readonly",
+    "Slingshot": "readonly",
+    "matchAllowedFileTypes": "readonly"
+  },
+  "rules": {
+    "@typescript-eslint/no-floating-promises": [
+      "error"
+    ],
+    "@typescript-eslint/no-shadow": [
+      "error"
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ],
+    "array-bracket-newline": [
+      "warn",
+      "consistent"
+    ],
+    "arrow-body-style": 1,
+    "block-scoped-var": 0,
+    "camelcase": 0,
+    "comma-style": [
+      0,
+      "first"
+    ],
+    "complexity": 0,
+    "curly": [
+      "warn",
+      "multi-line",
+      "consistent"
+    ],
+    "dot-notation": 0,
+    "eqeqeq": "warn",
+    "guard-for-in": 2,
+    "indent": [
+      "off",
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": 0,
+    "max-depth": 0,
+    "max-len": [
+      2,
+      {
+        "code": 200,
+        "ignoreComments": true,
+        "ignoreUrls": true
+      }
+    ],
+    "max-params": 0,
+    "max-statements": 0,
+    "new-cap": 0,
+    "no-bitwise": 2,
+    "no-caller": 2,
+    "no-cond-assign": 1,
+    "no-debugger": 0,
+    "no-empty": 2,
+    "no-eq-null": 0,
+    "no-eval": 0,
+    "no-extra-semi": 1,
+    "no-invalid-this": 0,
+    "no-iterator": 0,
+    "no-loop-func": 1,
+    "no-multi-str": 0,
+    "no-new": 0,
+    "no-new-func": 0,
+    "no-new-wrappers": 0,
+    "no-plusplus": 0,
+    "no-proto": 0,
+    "no-script-url": 0,
+    "no-shadow": "off",
+    "no-undef": 0,
+    "no-unreachable": 1,
+    "no-unused-expressions": 2,
+    "no-unused-vars": "off",
+    "no-use-before-define": 0,
+    "quotes": 0,
+    "semi": "warn",
+    "sort-imports": [
+      "off",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": false,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": [
+          "none",
+          "all",
+          "multiple",
+          "single"
+        ],
+        "allowSeparatedGroups": false
+      }
+    ],
+    "strict": [
+      2,
+      "global"
+    ],
+    "wrap-iife": 0
+  },
+  "ignorePatterns": [
+    "**/.jshintrc"
+  ]
+}
