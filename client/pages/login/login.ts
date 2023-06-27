@@ -1,4 +1,5 @@
 import {Instance} from "../../helpers";
+import {Alert} from "../../alerts";
 
 interface tLogin extends Blaze.TemplateInstance {
     showLogin: ReactiveVar<boolean>;
@@ -43,6 +44,7 @@ Template.login.events({
                 if (error)
                 {
                     console.error(error);
+                    Alert.error(error.reason);
                     return;
                 }
                 
@@ -57,6 +59,8 @@ Template.login.events({
             if (error)
             {
                 console.error(error);
+                Alert.error(error.reason);
+                return;
             }
             
             Router.go("/");
