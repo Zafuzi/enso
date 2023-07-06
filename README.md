@@ -1,5 +1,8 @@
 # ENSO
 
+*** ARCHIVED ***
+I have moved this project to bitbucket: https://bitbucket.org/zafuzi/enso/src/main/
+
 ## about
 This is a small project that I intend to maintain as a way for me to quickly get up and running with new meteor projects
 
