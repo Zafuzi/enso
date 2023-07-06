@@ -1,6 +1,6 @@
 # ENSO
 
-*** ARCHIVED ***
+**ARCHIVED**
 I have moved this project to bitbucket: https://bitbucket.org/zafuzi/enso/src/main/
 
 ## about
